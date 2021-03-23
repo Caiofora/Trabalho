@@ -1,0 +1,103 @@
+﻿@model CurriculoViewModel
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Criar curriculo</title>
+    <link rel="stylesheet" type="text/css" href="~/css/prototipo.css" media="screen" />
+</head>
+
+<body>
+
+    <header>
+        <nav id="nav-menu">
+            <div id="site-name">
+                CURRICULUM
+                <span>
+                    <div class="menu-right">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu">Menu Inicial</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="sub-menu" href=" # ">Lista de Desejos</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href=" # ">Ajuda</a>
+                    </div>
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <div id="background">
+        <div id="uniaoDivs">
+
+        </div>
+        <div id="sub-background">
+            <form accept-charset="UTF-8" action="action_page.php" autocomplete="off" method="GET" target="_blank" id="FormFormacao">
+                <div>
+                    <label class="titleFormacao">CADASTRO DE FORMAÇÃO ACADEMICA E CURSOS</label>
+                </div>
+                <div style="margin: 0 auto; text-align: center; width: 100%">
+                    <div style="float: left; margin: 0px 15px 0px 15px; text-align: justify; width: 60%">
+                        <div class="semCursos">
+                            <h1 class="formacao">
+                                <label>Formação: </label>
+                                <select id="formacao">
+                                    <option value="Estudante">Estudante</option>
+                                    <option value="EMCompleto">Ensino Médio Completo</option>
+                                    <option value="EMIncompleto">Ensino Médio Incompleto</option>
+                                    <option value="CursandoSuperior">Cursando Ens. Superior</option>
+                                    <option value="Sup.Completo">Ens. Superior Completo</option>
+                                    <option value="PosComp">Pós Graduado</option>
+                                    <option value="PosIncomp.">Pós Graduação Incompleto</option>
+                                </select>
+                            </h1>
+                        </div>
+
+                        <h1 class="formacao">
+                            <label id="CabecalhoCurso">Cursos</label>
+                        </h1>
+
+                        <h1 class="formacao">
+                            <label>Curso 1:</label>
+                            <input asp-action="" type="text" name="curso" id="cursos" title="Digite um curso que você tenha feito (até 5)" required />
+                        </h1>
+                        <h1 class="formacao">
+                            <label>Curso 2:</label>
+                            <input asp-action="" type="text" name="curso" id="cursos" title="Digite um curso que você tenha feito (até 5)" />
+                        </h1>
+                        <h1 class="formacao">
+                            <label>Curso 3:</label>
+                            <input asp-action="" type="text" name="curso" id="cursos" title="Digite um curso que você tenha feito (até 5)" />
+                        </h1>
+                        <h1 class="formacao">
+                            <label>Curso 4:</label>
+                            <input asp-action="" type="text" name="curso" id="cursos" title="Digite um curso que você tenha feito (até 5)" />
+                        </h1>
+                        <h1 class="formacao">
+                            <label>Curso 5:</label>
+                            <input asp-action="" type="text" name="curso" id="cursos" title="Digite um curso que você tenha feito (até 5)" />
+                        </h1>
+                    </div>
+                    <!--=================================================================================================================================================================================================================-->
+                    <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 30%;">
+                        <img width="100%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
+                        <div class="button">
+                            <button asp-area="" asp-controller="Cadastro" asp-action="CadastroExpProf" class="advanceButton">
+                                Avançar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="rodapé">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+﻿@model CurriculoViewModel
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Criar curriculo</title>
+    <link rel="stylesheet" type="text/css" href="~/css/prototipo.css" media="screen" />
+</head>
+
+<body>
+
+    <header>
+        <nav id="nav-menu">
+            <div id="site-name">
+                CURRICULUM
+                <span>
+                    <div class="menu-right">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu">Menu Inicial</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="sub-menu" href=" # ">Lista de Desejos</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href=" # ">Ajuda</a>
+                    </div>
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <div id="background">
+        <div id="uniaoDivs">
+
+        </div>
+        <div id="sub-background">
+            <form accept-charset="UTF-8" action="action_page.php" autocomplete="off" method="GET" target="_blank" id="FormExp">
+                <div>
+                    <label class="titleExp">CADASTRO DE EXPERIÊNCIA PROFISSIONAL</label>
+                </div>
+                <div style="margin: 0 auto; text-align: center; width: 100%">
+                    <div style="float: left; margin: 0px 15px 0px 15px; text-align: justify; width: 60%">
+
+                        <h1 class="expProf">
+                            <label>1ª Experiência:</label>
+                            <input asp-action="" type="text" name="inputExp1" id="inputExp1" title="Digite sua experiência profissional (até 3)"  />
+                            <br />
+                            <label>De:</label>
+                            <input asp-action="" type="date" name="inputDateSince1" id="inputDateSince1" title="Digite o período de sua experiência profissional (até 3)" disabled />
+                            <label>Até:</label>
+                            <input asp-action="" type="date" name="inputdateUntil1" id="inputdateUntil1" title="Digite o período de sua experiência profissional (até 3)" disabled />
+                        </h1>
+                        <script type="text/javascript">
+                            document.getElementById("inputExp1").focusout = function () {
+                                if (document.getElementById("inputExp1").value != null || document.getElementById("inputExp1").value != "") {
+                                    document.getElementById("inputDateSince1").disabled = false;
+                                    document.getElementById("inputdateUntil1").disabled = false;
+                                    
+                                }
+                                else {
+                                    document.getElementById("inputDateSince1").disabled = true;
+                                    document.getElementById("inputdateUntil1").disabled = true;
+                                }
+                            }
+                        </script>
+                        <h1 class="expProf">
+                            <label>2ª Experiência:</label>
+                            <input asp-action="" type="text" name="inputExp2" id="inputExp2" title="Digite sua experiência profissional (até 3)" />
+                            <br />
+                            <label>De:</label>
+                            <input asp-action="" type="date" name="inputDateSince2" id="inputDateSince2" title="Digite o período de sua experiência profissional (até 3)" disabled />
+                            <label>Até: </label>
+                            <input asp-action="" type="date" name="inputdateUntil2" id="inputdateUntil2" title="Digite o período de sua experiência profissional (até 3)"  disabled/>
+                        </h1>
+                        <script type="text/javascript">
+                            document.getElementById("inputExp2").focusout = function () {
+                                if (document.getElementById("inputExp2").value != null) {
+                                    document.getElementById("inputDateSince2").disabled = false;
+                                    document.getElementById("inputdateUntil2").disabled = false;
+                                    
+                                }
+                                else {
+                                    document.getElementById("inputDateSince2").disabled = true;
+                                    document.getElementById("inputdateUntil2").disabled = true;
+                                }
+                            }
+                        </script>
+                        <h1 class="expProf">
+                            <label>3ª Experiência:</label>
+                            <input asp-action="" type="text" name="inputExp3" id="inputExp3" title="Digite sua experiência profissional (até 3)" />
+                            <br />
+                            <label>De:</label>
+                            <input asp-action="" type="date" name="inputDateSince3" id="inputDateSince3" title="Digite o período de sua experiência profissional (até 3)" disabled />
+                            <label>Até: </label>
+                            <input asp-action="" type="date" name="inputdateUntil3" id="inputdateUntil3" title="Digite o período de sua experiência profissional (até 3)" disabled/>
+                        </h1>
+                        <script type="text/javascript">
+                            document.getElementById("inputExp3").focusout = function () {
+                                if (document.getElementById("inputExp3").value != null) {
+                                    document.getElementById("inputDateSince3").disabled = false;
+                                    document.getElementById("inputdateUntil3").disabled = false;
+                                   
+                                }
+                                else {
+                                    document.getElementById("inputDateSince3").disabled = true;
+                                    document.getElementById("inputdateUntil3").disabled = true;
+                                }
+                            }
+                        </script>
+
+                    </div>
+                    <!--=================================================================================================================================================================================================================-->
+                    <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 30%;">
+                        <img width="100%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
+                        <div class="button">
+                            <button asp-area="" asp-controller="Home" asp-action="Index" class="advanceButton">
+                                Avançar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="rodapé">
+
+    </div>
+</body>
+
+</html>

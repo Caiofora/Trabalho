@@ -23,6 +23,15 @@ namespace Trabalho.Controllers
             return View();
         }
 
+        public IActionResult CadastroFormacao()
+        {
+            return View();
+        }
+        public IActionResult CadastroExpProf()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

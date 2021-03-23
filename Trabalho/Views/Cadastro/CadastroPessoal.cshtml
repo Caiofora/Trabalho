@@ -16,11 +16,11 @@
                 <span>
                     <div class="menu-right">
                         <a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu">Menu Inicial</a>
-                        <td>_____</td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a id="sub-menu" href=" # ">Lista de Desejos</a>
-                        <td>_____</td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
-                        <td>_____</td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href=" # ">Ajuda</a>
                     </div>
                 </span>
@@ -39,7 +39,7 @@
                     <label class="titlePessoal">CADASTRO DE INFORMAÇÕES PESSOAIS</label>
                 </div>
                 <div style="margin: 0 auto; text-align: center; width: 100%">
-                    <div style="float: left; margin: 0px 15px 0px 15px; text-align: justify; width: 30%">
+                    <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 30%">
                         <h1 class="pessoais">
                             <label>Nome: </label>
                             <input name="name" type="text" value="" required />
@@ -54,7 +54,7 @@
 
                         <h1 class="pessoais">
                             <label>Celular: </label>
-                            <input type="celular" name="celular" \ pattern="\d{11}"
+                            <input type="number" name="celular" \ pattern="\d{11}"
                                    placeholder="DD 9XXXXXXXX" title="Digite um celular no formato: DD 9XXXXXXXX"
                                    required>
                             <!-- <input id="botao" type="submit" value="Verificar">-->
@@ -68,35 +68,35 @@
 
                     </div>
                     <!--=================================================================================================================================================================================================================-->
-                    <div style="float: left; margin: 0px 15px 0px 0px; text-align: justify; width: 30%;">
+                    <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 40%;">
                         <h1 class="pessoais">
                             <label>CEP: </label>
-                            <input id="cep" type="cep" value="" \ title="Digite um cep no formato: XXXXX-XXX" required
+                            <input id="cep" type="text" value="" \ title="Digite um cep no formato: XXXXX-XXX" required
                                    pattern="\d{5}-?\d{3}" />
                             <!-- <input id="botao"  type="submit" value="Verificar" />-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Rua </label>
-                            <input id="rua" type="rua" value="" required />
+                            <input id="rua" type="text" value="" required />
                             <!-- <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Número </label>
-                            <input id="numero" type="numero" value="" required />
+                            <input id="numero" type="number" value="" required />
                             <!-- <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Bairro </label>
-                            <input id="bairro" type="bairro" value="" required />
+                            <input id="bairro" type="text" value="" required />
                             <!--   <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Complemento </label>
-                            <input id="complemento" type="complemento" value="" />
+                            <input id="complemento" type="text" value="" />
                             <!--  <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 
@@ -164,12 +164,12 @@
                         });
                     </script>
                     <!--=================================================================================================================================================================================================================-->
-                    <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 30%;">
-                        <img width="100%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
+                    <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 20%;">
+                        <img width="150%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
                         <div class="button">
 
 
-                            <button asp-area="" asp-controller="Home" asp-action="Index" class="advanceButton">
+                            <button asp-area="" asp-controller="Cadastro" asp-action="CadastroFormacao" class="advanceButton">
                                 Avançar
                             </button>
                         </div>
