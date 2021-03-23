@@ -34,8 +34,7 @@
         </div>
         <div id="sub-background">
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-            <form accept-charset="UTF-8" action="action_page.php" autocomplete="off" method="GET" target="_blank"
-                  id="FormPessoal">
+            <form accept-charset="UTF-8" action="action_page.php" autocomplete="off" method="GET" target="_blank" id="FormPessoal">
                 <div>
                     <label class="titlePessoal">CADASTRO DE INFORMAÇÕES PESSOAIS</label>
                 </div>
@@ -50,21 +49,21 @@
                             <label>CPF: </label>
                             <input type="text" name="cpf" \ pattern="\d{11}" placeholder="123456789XX"
                                    required\ title="Digite um CPF no formato: xxxxxxxxxxx">
-                            <input type="submit" value="Verificar">
+                            <!--  <input id="botao" type="submit" value="Verificar">-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Celular: </label>
                             <input type="celular" name="celular" \ pattern="\d{11}"
-                                   placeholder="DD 9XXXXXXXX" \ title="Digite um celular no formato: DD 9XXXXXXXX"
+                                   placeholder="DD 9XXXXXXXX" title="Digite um celular no formato: DD 9XXXXXXXX"
                                    required>
-                            <input type="submit" value="Verificar">
+                            <!-- <input id="botao" type="submit" value="Verificar">-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Email: </label>
                             <input type="email" value="" placeholder="name@email.com" required />
-                            <input type="submit" value="Verificar" />
+                            <!-- <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 
                     </div>
@@ -74,31 +73,31 @@
                             <label>CEP: </label>
                             <input id="cep" type="cep" value="" \ title="Digite um cep no formato: XXXXX-XXX" required
                                    pattern="\d{5}-?\d{3}" />
-                            <input type="submit" value="Verificar" />
+                            <!-- <input id="botao"  type="submit" value="Verificar" />-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Rua </label>
                             <input id="rua" type="rua" value="" required />
-                            <input type="submit" value="Verificar" />
+                            <!-- <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Número </label>
                             <input id="numero" type="numero" value="" required />
-                            <input type="submit" value="Verificar" />
+                            <!-- <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Bairro </label>
                             <input id="bairro" type="bairro" value="" required />
-                            <input type="submit" value="Verificar" />
+                            <!--   <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Complemento </label>
                             <input id="complemento" type="complemento" value="" />
-                            <input type="submit" value="Verificar" />
+                            <!--  <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 
                         <h1 class="pessoais">
@@ -166,10 +165,11 @@
                     </script>
                     <!--=================================================================================================================================================================================================================-->
                     <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 30%;">
-                        <img width="100%" class="ilustrativa1" src=" ~/img/curriculoex3.jpg">
+                        <img width="100%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
                         <div class="button">
 
-                            <button href="prototipo.html" class="advanceButton">
+
+                            <button asp-area="" asp-controller="Home" asp-action="Index" class="advanceButton">
                                 Avançar
                             </button>
                         </div>
@@ -181,9 +181,6 @@
 
     <div id="rodapé">
 
-        <span id="rodapé">
-
-        </span>
     </div>
 </body>
 
