@@ -9,21 +9,16 @@ using Trabalho.Models;
 
 namespace Trabalho.Controllers
 {
-    public class HomeController : Controller
+    public class CadastroController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<CadastroController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public CadastroController(ILogger<CadastroController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Sobre()
+        public IActionResult CadastroPessoal()
         {
             return View();
         }
@@ -35,3 +30,4 @@ namespace Trabalho.Controllers
         }
     }
 }
+
