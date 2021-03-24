@@ -17,8 +17,6 @@
                     <div class="menu-right">
                         <a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu">Menu Inicial</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a id="sub-menu" href=" # ">Lista de Desejos</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href=" # ">Ajuda</a>
@@ -65,6 +63,11 @@
                             <input type="email" value="" placeholder="name@email.com" required />
                             <!-- <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
+                        <br /><br />
+                        <h1 class="pessoais" id="cargo">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Cargo Pretendido: </label>
+                            <input name="cargo" type="text" value="" required placeholder="Engenheiro Civil"/>
+                        </h1>
 
                     </div>
                     <!--=================================================================================================================================================================================================================-->
@@ -78,13 +81,15 @@
 
                         <h1 class="pessoais">
                             <label>Rua </label>
-                            <input id="rua" type="text" value="" required />
-                            <!-- <input id="botao" type="submit" value="Verificar" />-->
+                            <input id="rua" type="text" name="rua" required />
+                            <!-- <span asp-validation-for="rua" class="text-danger"></span>-->
+                            <!-- <input id="botao" type="submit" value="Verificar" /
+    NAME TEM QUE SER IGUAL A VARIAVEL QUE ESTIVER ENTRANDO>-->
                         </h1>
 
                         <h1 class="pessoais">
                             <label>Número </label>
-                            <input id="numero" type="number" value="" required />
+                            <input id="numeroEnd" type="number" value="" required />
                             <!-- <input id="botao" type="submit" value="Verificar" />-->
                         </h1>
 

@@ -26,6 +26,16 @@
     height: 12px;
 }
 
+#cargo{
+    width: 900px;
+    font-size: 32:
+}
+
+#cargo input {
+    width: 900px;
+    font-size: 32:
+}
+
 img.imgLehr {
     text-align: justify;
     font-style: italic;
@@ -90,10 +100,18 @@ img.imgCaio {
         font-size: 20px;
     }
 
+    #FormFormacao label {
+        font-size: 26px;
+    }
+
 #FormExp input {
     width: 210px;
     height: 25px;
     font-size: 20px;
+}
+
+#idioma {
+    font-size:25px;
 }
 
 #FormExp select {
@@ -107,15 +125,21 @@ img.imgCaio {
     font-size: 29px;
     color: rgb(26, 3, 8);
     text-decoration: underline;
-    margin-bottom: 50px;
     margin-top: 10px;
     margin-left: 28%;
+    width: 350px;
 }
 
 #FormFormacao select {
     width: 250px;
     height: 29px;
     font-size: 20px;
+}
+
+#FormIdioma select {
+    width: 250px;
+    height: 29px;
+    font-size: 15px;
 }
 
 input#botao {
@@ -164,6 +188,16 @@ h1.pessoais label {
     width: 650px;
 }
 
+.titleIdioma {
+    font-size: 28px;
+    color: rgb(16, 7, 94);
+    background-color: rgb(12, 209, 235);
+    text-decoration: underline;
+    text-align: center;
+    margin: 10px 20%;
+    width: 650px;
+}
+
 .titleExp {
     font-size: 28px;
     color: rgb(16, 7, 94);
@@ -172,6 +206,10 @@ h1.pessoais label {
     text-align: center;
     margin: 10px 20%;
     width: 650px;
+}
+
+.ilustrativa3 {
+    margin: -120px 60%;
 }
 
 h1.expProf label {
@@ -194,6 +232,10 @@ h1.expProf {
     font-size: 15px;
     margin: -110px 31%;
     color: red;
+}
+
+#cursos input{
+    width: 0px 600px;
 }
 
 .semCursos {
@@ -275,6 +317,39 @@ h1.expProf {
     text-shadow: -1px -2px 0px #1570cd;
     text-align: center;
     margin: -100px 0%;
+}
+
+
+    .advanceButton3:hover {
+        background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+        background-color: #1e62d0;
+        text-align: center;
+    }
+
+    .advanceButton3:active {
+        position: relative;
+        top: 1px;
+    }
+
+.advanceButton3 {
+    box-shadow: inset 0px 0px 19px -9px #97c4fe;
+    background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color: #3d94f6;
+    border-radius: 27px;
+    border: 4px solid #337fed;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px 70px;
+    text-decoration: none;
+    text-shadow: -1px -2px 0px #1570cd;
+    text-align: center;
+    padding-top:10px; 
+    margin: 100px -50%;
 }
 
 table.tblSelect {
