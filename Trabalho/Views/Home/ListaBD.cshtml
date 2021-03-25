@@ -19,9 +19,7 @@
                 CURRICULUM
                 <span>
                     <div class="menu-right">
-                        <a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu"> Menu Inicial</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a asp-area="" asp-controller="Home" asp-action="ListaBD" id="sub-menu">Lista de Currículos</a>
+                        <<a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu"> Menu Inicial</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -40,7 +38,7 @@
             <h1 class="textoMédio">Clique no botão para iniciar seu novo currículo.</h1>
             <h1 class="textoMédio">Se quiser editar, acesse um currículo para editar pela tabela</h1>
             <div class="button">
-                <a href="Cadastro/NovoCurriculo" class="myButton1">Crie seu Curriculo !</a>
+                <a asp-area="" asp-controller="Cadastro" asp-action="CadastroPessoal" class="myButton1">Crie seu Curriculo !</a>
                 <a asp-area="" asp-controller="Cadastro" asp-action="CadastroPessoal" class="myButton2">Edite seu currículo !</a>
             </div>
         </div>
@@ -58,7 +56,7 @@
              @foreach (CurriculoViewModel a in Model)
               {
                 <tbody>
-                <td><a href="cadastro/Edit?id=@a.cpf">Alterar</a> </td>
+                <td><a href="curriculo/Edit?id=@a.cpf">Alterar</a> </td>
                 <td>@a.cpf</td>
                 <td>@a.nome</td>
                 <td>@a.rua</td>

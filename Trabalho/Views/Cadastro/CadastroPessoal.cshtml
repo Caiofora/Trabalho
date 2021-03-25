@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@model CurriculoViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -32,161 +36,163 @@
         </div>
         <div id="sub-background">
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-            <form accept-charset="UTF-8" action="action_page.php" autocomplete="off" method="GET" target="_blank" id="FormPessoal">
-                <div>
-                    <label class="titlePessoal">CADASTRO DE INFORMAÇÕES PESSOAIS</label>
-                </div>
-                <div style="margin: 0 auto; text-align: center; width: 100%">
-                    <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 30%">
-                        <h1 class="pessoais">
-                            <label>Nome: </label>
-                            <input name="name" type="text" value="" required />
-                        </h1>
-
-                        <h1 class="pessoais">
-                            <label>CPF: </label>
-                            <input type="text" name="cpf" \ pattern="\d{11}" placeholder="123456789XX"
-                                   required\ title="Digite um CPF no formato: xxxxxxxxxxx">
-                            <!--  <input id="botao" type="submit" value="Verificar">-->
-                        </h1>
-
-                        <h1 class="pessoais">
-                            <label>Celular: </label>
-                            <input type="number" name="celular" \ pattern="\d{11}"
-                                   placeholder="DD 9XXXXXXXX" title="Digite um celular no formato: DD 9XXXXXXXX"
-                                   required>
-                            <!-- <input id="botao" type="submit" value="Verificar">-->
-                        </h1>
-
-                        <h1 class="pessoais">
-                            <label>Email: </label>
-                            <input type="email" value="" placeholder="name@email.com" required />
-                            <!-- <input id="botao" type="submit" value="Verificar" />-->
-                        </h1>
-                        <br /><br />
-                        <h1 class="pessoais" id="cargo">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Cargo Pretendido: </label>
-                            <input name="cargo" type="text" value="" required placeholder="Engenheiro Civil"/>
-                        </h1>
-
+            <div id="divPessoal" accept-charset="UTF-8" action="action_page.php" autocomplete="off" target="_blank">
+                <form asp-action="Salvar1" method="post">
+                    <div>
+                        <label class="titlePessoal">CADASTRO DE INFORMAÇÕES PESSOAIS</label>
                     </div>
-                    <!--=================================================================================================================================================================================================================-->
-                    <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 40%;">
-                        <h1 class="pessoais">
-                            <label>CEP: </label>
-                            <input id="cep" type="text" value="" \ title="Digite um cep no formato: XXXXX-XXX" required
-                                   pattern="\d{5}-?\d{3}" />
-                            <!-- <input id="botao"  type="submit" value="Verificar" />-->
-                        </h1>
+                    <div style="margin: 0 auto; text-align: center; width: 100%">
+                        <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 30%">
+                            <h1 class="pessoais">
+                                <label class="control-label">Nome: </label>
+                                <input name="nome" type="text" value="@Model.nome" class="form-control" required />
+                            </h1>
 
-                        <h1 class="pessoais">
-                            <label>Rua </label>
-                            <input id="rua" type="text" name="rua" required />
-                            <!-- <span asp-validation-for="rua" class="text-danger"></span>-->
-                            <!-- <input id="botao" type="submit" value="Verificar" /
-    NAME TEM QUE SER IGUAL A VARIAVEL QUE ESTIVER ENTRANDO>-->
-                        </h1>
+                            <h1 class="pessoais">
+                                <label>CPF: </label>
+                                <input type="text" name="cpf" \ pattern="\d{11}" placeholder="123456789XX"
+                                       required\ title="Digite um CPF no formato: xxxxxxxxxxx" class="form-control" value="@Model.cpf">
+                                <!--  <input id="botao" type="submit" value="Verificar">-->
+                            </h1>
 
-                        <h1 class="pessoais">
-                            <label>Número </label>
-                            <input id="numeroEnd" type="number" value="" required />
-                            <!-- <input id="botao" type="submit" value="Verificar" />-->
-                        </h1>
+                            <h1 class="pessoais">
+                                <label>Celular: </label>
+                                <input type="number" name="celular" \ pattern="\d{11}"
+                                       placeholder="DD 9XXXXXXXX" title="Digite um celular no formato: DD 9XXXXXXXX"
+                                       required class="form-control" value="@Model.celular">
+                                <!-- <input id="botao" type="submit" value="Verificar">-->
+                            </h1>
 
-                        <h1 class="pessoais">
-                            <label>Bairro </label>
-                            <input id="bairro" type="text" value="" required />
-                            <!--   <input id="botao" type="submit" value="Verificar" />-->
-                        </h1>
+                            <h1 class="pessoais">
+                                <label>Email: </label>
+                                <input type="email" value="@Model.email" placeholder="name@email.com" required name="email" class="form-control" />
+                                <!-- <input id="botao" type="submit" value="Verificar" />-->
+                            </h1>
 
-                        <h1 class="pessoais">
-                            <label>Complemento </label>
-                            <input id="complemento" type="text" value="" />
-                            <!--  <input id="botao" type="submit" value="Verificar" />-->
-                        </h1>
+                            <h1 class="pessoais" id="cargo">
+                                <label>Cargo Pretendido: </label>
+                                <input name="cargoPretendido" type="text" class="form-control" required placeholder="Engenheiro Civil" value="@Model.cargoPretendido" />
+                            </h1>
 
-                        <h1 class="pessoais">
-                            <label for="uf">Estado</label>
-                            <select id="uf">
-                                <option value="AC">Acre</option>
-                                <option value="AL">Alagoas</option>
-                                <option value="AP">Amapá</option>
-                                <option value="AM">Amazonas</option>
-                                <option value="BA">Bahia</option>
-                                <option value="CE">Ceará</option>
-                                <option value="DF">Distrito Federal</option>
-                                <option value="ES">Espírito Santo</option>
-                                <option value="GO">Goiás</option>
-                                <option value="MA">Maranhão</option>
-                                <option value="MT">Mato Grosso</option>
-                                <option value="MS">Mato Grosso do Sul</option>
-                                <option value="MG">Minas Gerais</option>
-                                <option value="PA">Pará</option>
-                                <option value="PB">Paraíba</option>
-                                <option value="PR">Paraná</option>
-                                <option value="PE">Pernambuco</option>
-                                <option value="PI">Piauí</option>
-                                <option value="RJ">Rio de Janeiro</option>
-                                <option value="RN">Rio Grande do Norte</option>
-                                <option value="RS">Rio Grande do Sul</option>
-                                <option value="RO">Rondônia</option>
-                                <option value="RR">Roraima</option>
-                                <option value="SC">Santa Catarina</option>
-                                <option value="SP">São Paulo</option>
-                                <option value="SE">Sergipe</option>
-                                <option value="TO">Tocantins</option>
-                            </select>
-                        </h1>
-                    </div>
-
-                    <script type="text/javascript">
-                        $("#cep").focusout(function () {
-                            //Início do Comando AJAX
-                            $.ajax({
-                                //O campo URL diz o caminho de onde virá os dados
-                                //É importante concatenar o valor digitado no CEP
-                                url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
-                                //Aqui você deve preencher o tipo de dados que será lido,
-                                //no caso, estamos lendo JSON.
-                                dataType: 'json',
-                                //SUCESS é referente a função que será executada caso
-                                //ele consiga ler a fonte de dados com sucesso.
-                                //O parâmetro dentro da função se refere ao nome da variável
-                                //que você vai dar para ler esse objeto.
-                                success: function (resposta) {
-                                    //Agora basta definir os valores que você deseja preencher
-                                    //automaticamente nos campos acima.
-                                    $("#rua").val(resposta.logradouro);
-                                    //$("#numero").val(resposta.complemento);
-                                    $("#bairro").val(resposta.bairro);
-                                    $("#cidade").val(resposta.localidade);
-                                    $("#uf").val(resposta.uf);
-                                    //Vamos incluir para que o Número seja focado automaticamente
-                                    //melhorando a experiência do usuário
-                                    $("#numero").focus();
-                                }
-                            });
-                        });
-                    </script>
-                    <!--=================================================================================================================================================================================================================-->
-                    <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 20%;">
-                        <img width="150%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
-                        <div class="button">
-
-
-                            <button asp-area="" asp-controller="Cadastro" asp-action="CadastroFormacao" class="advanceButton">
-                                Avançar
-                            </button>
                         </div>
-                    </div>
+                        <!--=================================================================================================================================================================================================================-->
+                        <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 40%;">
+                            <h1 class="pessoais">
+                                <label>CEP: </label>
+                                <input id="cep" type="text" value="@Model.cep" \ title="Digite um cep no formato: XXXXX-XXX" required
+                                       pattern="\d{5}-?\d{3}" class="form-control" name="cep" />
+                                <!-- <input id="botao"  type="submit" value="Verificar" />-->
+                            </h1>
+
+                            <h1 class="pessoais">
+                                <label>Rua </label>
+                                <input id="rua" type="text" name="rua" required class="form-control" value="@Model.rua" />
+                                <!-- <span asp-validation-for="rua" class="text-danger"></span>-->
+                                <!-- <input id="botao" type="submit" value="Verificar" /
+                                NAME TEM QUE SER IGUAL A VARIAVEL QUE ESTIVER ENTRANDO>-->
+                            </h1>
+
+                            <h1 class="pessoais">
+                                <label>Número </label>
+                                <input id="numeroEnd" type="number" value="@Model.numeroEnd" required class="form-control" name="numeroEnd" />
+                                <!-- <input id="botao" type="submit" value="Verificar" />-->
+                            </h1>
+
+                            <h1 class="pessoais">
+                                <label>Bairro </label>
+                                <input id="bairro" type="text" value="@Model.bairro" required class="form-control" name="bairro" />
+                                <!--   <input id="botao" type="submit" value="Verificar" />-->
+                            </h1>
+
+                            <h1 class="pessoais">
+                                <label>Complemento </label>
+                                <input id="complementoEnd" type="text" value="@Model.complementoEnd" class="form-control" name="complementoEnd" />
+                                <!--  <input id="botao" type="submit" value="Verificar" />-->
+                            </h1>
+
+                            <h1 class="pessoais">
+                                <label for="uf">Estado</label>
+                                <select id="uf" class="form-control" name="estado" value="@Model.estado">
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </h1>
+                        </div>
+
+                        <script type="text/javascript">
+                            $("#cep").focusout(function () {
+                                //Início do Comando AJAX
+                                $.ajax({
+                                    //O campo URL diz o caminho de onde virá os dados
+                                    //É importante concatenar o valor digitado no CEP
+                                    url: 'https://viacep.com.br/ws/' + $(this).val() + '/json/unicode/',
+                                    //Aqui você deve preencher o tipo de dados que será lido,
+                                    //no caso, estamos lendo JSON.
+                                    dataType: 'json',
+                                    //SUCESS é referente a função que será executada caso
+                                    //ele consiga ler a fonte de dados com sucesso.
+                                    //O parâmetro dentro da função se refere ao nome da variável
+                                    //que você vai dar para ler esse objeto.
+                                    success: function (resposta) {
+                                        //Agora basta definir os valores que você deseja preencher
+                                        //automaticamente nos campos acima.
+                                        $("#rua").val(resposta.logradouro);
+                                        //$("#numero").val(resposta.complemento);
+                                        $("#bairro").val(resposta.bairro);
+                                        $("#cidade").val(resposta.localidade);
+                                        $("#uf").val(resposta.uf);
+                                        //Vamos incluir para que o Número seja focado automaticamente
+                                        //melhorando a experiência do usuário
+                                        $("#numero").focus();
+                                    }
+                                });
+                            });
+                        </script>
+                        <!--=================================================================================================================================================================================================================-->
+                        <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 20%;">
+                            <img width="150%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
+                            <div class="button">
+
+                                <input type="submit" value="Avançar" class="advanceButton" />
+                                <!-- <button type="submit" asp-area="" asp-controller="Cadastro" asp-action="CadastroFormacao" class="advanceButton">
+                                        Avançar
+                                    </button>-->
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
 
-    <div id="rodapé">
+        <div id="rodapé">
 
-    </div>
-</body>
+        </div>
+    </body>
 
-</html>
+    </html>

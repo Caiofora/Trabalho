@@ -7,11 +7,11 @@ namespace Trabalho.Models
 {
     public class CurriculoViewModel
     {
-        public int id { get; set; }
-        public int cpf { get; set; }
+        public string cpf { get; set; }
         public string nome { get; set; }
-        public int celular { get; set; }
+        public string celular { get; set; }
         public string email { get; set; }
+        public string cargoPretendido { get; set; }
         public int cep { get; set; }
         public string rua { get; set; }
         public int numeroEnd { get; set; }
@@ -33,6 +33,8 @@ namespace Trabalho.Models
         public string experiencia3 { get; set; }
         public string experiencia3Desde { get; set; }
         public string experiencia3Ate { get; set; }
-        public string cargoPretendido { get; set; }
+        public string idioma1 { get; set; }
+        public string idioma2 { get; set; }
+        public string idioma3 { get; set; }
     }
 }

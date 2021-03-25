@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Trabalho.Models;
+using Trabalho.DAO;
+
 
 namespace Trabalho.Controllers
 {
@@ -42,32 +44,120 @@ namespace Trabalho.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        private void ValidaDados(CurriculoViewModel curriculo, string operacao)
+        public IActionResult Edit(string id)
         {
-            /*CurriculoDAO dao = new CurriculoDAO();
-            if (operacao == "I" && dao.Consulta(curriculo.Id) != null)
-                ModelState.AddModelError("Id", "Código já está em uso.");
-            if (operacao == "A" && dao.Consulta(curriculo.Id) == null)
-                ModelState.AddModelError("Id", "Aluno não existe.");
-            if (curriculo.Id <= 0)
-                ModelState.AddModelError("Id", "Id inválido!");
-
-            if (string.IsNullOrEmpty(curriculo.Nome))
-                ModelState.AddModelError("Nome", "Preencha o nome.");
-            if (curriculo.Mensalidade < 0)
-                ModelState.AddModelError("Mensalidade", "Campo obrigatório.");
-            if (curriculo.CidadeId <= 0)
-                ModelState.AddModelError("CidadeId", "Informe o código da cidade.");
-            if (curriculo.DataNascimento > DateTime.Now)
-                ModelState.AddModelError("DataNascimento", "Data inválida!");
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel curriculo = dao.Consulta(id);
+                if (curriculo == null)
+                    return RedirectToAction("index");
+                else
+                    return View("CadastroPessoal", curriculo);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
         }
 
-        private void ValidaDados(CurriculoViewModel curriculo, string operacao)
+        public IActionResult Salvar1(CurriculoViewModel curriculo)
         {
-            CurriculoDAO dao = new CurriculoDAO();
-            if (ModelState.IsValid )
-                ModelState.AddModelError("Id", "Código já está em uso.");*/
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                if (dao.Consulta(curriculo.cpf) == null)
+                    dao.Inserir1(curriculo);
+                /*else
+                    dao.Alterar1(curriculo);*/
+                return RedirectToAction("CadastroFormacao");
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
         }
+        public IActionResult Salvar4(CurriculoViewModel curriculo)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                if (dao.Consulta(curriculo.cpf) == null)
+                    dao.Inserir4(curriculo);
+                /*else
+                    dao.Alterar1(curriculo);*/
+                return RedirectToAction("index");
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+        public IActionResult Salvar3(CurriculoViewModel curriculo)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                if (dao.Consulta(curriculo.cpf) == null)
+                    dao.Inserir3(curriculo);
+                /*else
+                    dao.Alterar1(curriculo);*/
+                return RedirectToAction("index");
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+        public IActionResult Salvar2(CurriculoViewModel curriculo)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                if (dao.Consulta(curriculo.cpf) == null)
+                    dao.Inserir2(curriculo);
+                /*else
+                    dao.Alterar1(curriculo);*/
+                return RedirectToAction("index");
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+
+        public IActionResult NovoCurriculo()
+        {
+            CurriculoViewModel curriculo = new CurriculoViewModel();
+            return View("CadastroPessoal", curriculo);
+        }
+
+        /*  private void ValidaDados(CurriculoViewModel curriculo, string operacao)
+          {
+              CurriculoDAO dao = new CurriculoDAO();
+              if (operacao == "I" && dao.Consulta(curriculo.Id) != null)
+                  ModelState.AddModelError("Id", "Código já está em uso.");
+              if (operacao == "A" && dao.Consulta(curriculo.Id) == null)
+                  ModelState.AddModelError("Id", "Aluno não existe.");
+              if (curriculo.Id <= 0)
+                  ModelState.AddModelError("Id", "Id inválido!");
+
+              if (string.IsNullOrEmpty(curriculo.Nome))
+                  ModelState.AddModelError("Nome", "Preencha o nome.");
+              if (curriculo.Mensalidade < 0)
+                  ModelState.AddModelError("Mensalidade", "Campo obrigatório.");
+              if (curriculo.CidadeId <= 0)
+                  ModelState.AddModelError("CidadeId", "Informe o código da cidade.");
+              if (curriculo.DataNascimento > DateTime.Now)
+                  ModelState.AddModelError("DataNascimento", "Data inválida!");
+          }
+
+          private void ValidaDados(CurriculoViewModel curriculo, string operacao)
+          {
+              CurriculoDAO dao = new CurriculoDAO();
+              if (ModelState.IsValid )
+                  ModelState.AddModelError("Id", "Código já está em uso.");
+          }*/
 
     }
 }

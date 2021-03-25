@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Trabalho.Models;
+using Trabalho.DAO;
 
 namespace Trabalho.Controllers
 {
@@ -18,11 +19,6 @@ namespace Trabalho.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public IActionResult Sobre()
         {
             return View();
@@ -33,5 +29,62 @@ namespace Trabalho.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Index()
+        {
+            CurriculoDAO dao = new CurriculoDAO();
+            List<CurriculoViewModel> lista = dao.Listagem();
+            return View(lista);
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult ListaBD()
+        {
+            return View();
+        }
+
+        public IActionResult Edit(string id)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel curriculo = dao.Consulta(id);
+                if (curriculo == null)
+                    return RedirectToAction("index");
+                else
+                    return View("Form", curriculo);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+        public IActionResult NovoCurriculo()
+        {
+            CurriculoViewModel curriculo = new CurriculoViewModel();
+            return View("Form", curriculo);
+        }
+
+        /* public IActionResult Salvar1(CurriculoViewModel curriculo)
+         {
+             try
+             {
+                 CurriculoDAO dao = new CurriculoDAO();
+                 if (dao.Consulta(int.Parse(curriculo.cpf)) == null)
+                     dao.Inserir1(curriculo);
+                /* else
+                     dao.Alterar1(curriculo);
+                 return RedirectToAction("index");
+             }
+             catch (Exception erro)
+             {
+                 return View("Error", new ErrorViewModel(erro.ToString()));
+             }
+         }
+        */
     }
 }

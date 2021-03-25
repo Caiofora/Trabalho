@@ -27,12 +27,12 @@
 }
 
 #cargo{
-    width: 900px;
+    width: 500px;
     font-size: 32:
 }
 
 #cargo input {
-    width: 900px;
+    width: 500px;
     font-size: 32:
 }
 
@@ -86,7 +86,23 @@ img.imgCaio {
 
     #FormPessoal select {
         width: 230px;
+        height: ;
+        font-size: 16px;
+    }
+
+#divPessoal {
+    margin: 0px 3%;
+}
+
+    #divPessoal input {
+        width: 210px;
         height: 25px;
+        font-size: 16px;
+    }
+
+    #divPessoal select {
+        width: 230px;
+        height: 50px;
         font-size: 16px;
     }
 
@@ -256,7 +272,7 @@ h1.expProf {
     color: white;
 }
 
-.myButton {
+.myButton1 {
     box-shadow: inset 0px 0px 19px -9px #97c4fe;
     background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
     background-color: #3d94f6;
@@ -265,16 +281,16 @@ h1.expProf {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    width: 600px;
+    width: 430px;
     font-family: Arial;
     font-size: 20px;
     font-weight: bold;
     font-style: italic;
-    padding: 20px 200px;
+    padding: 20px 100px;
     text-decoration: none;
     text-shadow: -1px -2px 0px #1570cd;
     text-align: justify;
-    margin: 90px 31%;
+    margin: 90px 40%;
 }
 
     .myButton:hover {
@@ -352,7 +368,7 @@ h1.expProf {
     margin: 100px -50%;
 }
 
-table.tblSelect {
+/*table.tblSelect {
     margin-left: auto;
     margin-right: auto;
     border: 4px solid #555555;
@@ -418,8 +434,10 @@ table.tblSelect {
             padding: 2px 8px;
             border-radius: 5px;
         }
-
-
+        */
+.table table-responsive table-striped table-dark{
+    width: 70%;
+}
 #under-header img {
     margin-top: 30px;
     width: 140px;
