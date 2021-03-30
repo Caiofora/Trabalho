@@ -12,9 +12,9 @@ namespace Trabalho.Models
         public string celular { get; set; }
         public string email { get; set; }
         public string cargoPretendido { get; set; }
-        public int cep { get; set; }
+        public string cep { get; set; }
         public string rua { get; set; }
-        public int numeroEnd { get; set; }
+        public string numeroEnd { get; set; }
         public string bairro { get; set; }
         public string complementoEnd { get; set; }
         public string estado { get; set; }

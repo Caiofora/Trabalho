@@ -41,34 +41,16 @@
             <h1 class="textoMédio">Se quiser editar, acesse um currículo para editar pela tabela</h1>
             <div class="button">
                 <a href="Cadastro/NovoCurriculo" class="myButton1">Crie seu Curriculo !</a>
-                <a asp-area="" asp-controller="Cadastro" asp-action="CadastroPessoal" class="myButton2">Edite seu currículo !</a>
+               <!-- <a asp-area="" asp-controller="Cadastro" asp-action="CadastroPessoal" class="myButton2">Edite seu currículo !</a>-->
+            </div>
+            <div class="button">
+                <a href="Home/ListaBD" class="myButton1">Veja seu Curriculo !</a>
+                <!-- <a asp-area="" asp-controller="Cadastro" asp-action="CadastroPessoal" class="myButton2">Edite seu currículo !</a>-->
+            </div>
             </div>
         </div>
 
-        <table class="table  table-striped table-dark">
-            <thead>
-                <tr>
-                    <th class="link">Ação</th>
-                    <th>CPF</th>
-                    <th>Nome</th>
-                    <th>Rua</th>
-                    <th>CEP</th>
-                </tr>
-            </thead>
-             @foreach (CurriculoViewModel a in Model)
-              {
-                <tbody>
-                <td><a href="cadastro/Edit?id=@a.cpf">Alterar</a> </td>
-                <td>@a.cpf</td>
-                <td>@a.nome</td>
-                <td>@a.rua</td>
-                <td>@a.cep</td>
-                </tbody>
-              }            
-        </table>
-    </div>
+        <div id="rodapé"></div>
+    </body>
 
-    <div id="rodapé"></div>
-</body>
-
-</html>
+    </html>

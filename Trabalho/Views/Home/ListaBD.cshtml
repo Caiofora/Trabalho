@@ -19,7 +19,7 @@
                 CURRICULUM
                 <span>
                     <div class="menu-right">
-                        <<a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu"> Menu Inicial</a>
+                        <a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu">Menu Inicial</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -31,19 +31,7 @@
     </header>
 
     <div id="background" class="col-12">
-        <div id="under-header">
-            <img src="~/img/curriculologo.png" alt=" Curriculum ">
-            <h1 class="textoMenor">Rápido. Simples. Fácil de usar.</h1>
-            <h1 class="textoMaior">Nome do Site. O melhor gerador de currículos online.</h1>
-            <h1 class="textoMédio">Clique no botão para iniciar seu novo currículo.</h1>
-            <h1 class="textoMédio">Se quiser editar, acesse um currículo para editar pela tabela</h1>
-            <div class="button">
-                <a asp-area="" asp-controller="Cadastro" asp-action="CadastroPessoal" class="myButton1">Crie seu Curriculo !</a>
-                <a asp-area="" asp-controller="Cadastro" asp-action="CadastroPessoal" class="myButton2">Edite seu currículo !</a>
-            </div>
-        </div>
-
-        <table class="table  table-striped table-dark">
+        <table id="listagem" class="table  table-striped table-info">
             <thead>
                 <tr>
                     <th class="link">Ação</th>
@@ -56,7 +44,7 @@
              @foreach (CurriculoViewModel a in Model)
               {
                 <tbody>
-                <td><a href="curriculo/Edit?id=@a.cpf">Alterar</a> </td>
+                <td><a href="~/Cadastro/Edita1?id=@a.cpf">Alterar</a> </td>
                 <td>@a.cpf</td>
                 <td>@a.nome</td>
                 <td>@a.rua</td>

@@ -54,15 +54,22 @@ namespace Trabalho.DAO
             "where cpf = @cpf";
             HelperDAO.ExecutaSQL(sql, CriaParametros4(curriculo));
         }
-        /*public void Alterar(CurriculoViewModel curriculo)
+        public void Alterar1(CurriculoViewModel curriculo)
         {
             string sql =
-            "update CadastroCurriculo set descricao = @descricao, " +
-            "valor_locacao = @valor_locacao, " +
-            "categoriaid = @categoriaID," +
-            "data_aquisicao = @data_aquisicao where id = @id";
-            HelperDAO.ExecutaSQL(sql, CriaParametros(curriculo));
-        }*/
+            "update CadastroCurriculo set nome = @nome, " +
+            "email = @email," +
+            "cep = @cep," +
+            "rua = @rua," +
+            "bairro = @bairro," +
+            "complementoEnd = @complementoEnd," +
+            "estado = @estado," +
+            "cargoPretendido = @cargoPretendido," +
+            "celular = @celular," +
+            "numeroEnd = @numeroEnd " +
+            "where cpf = @cpf";
+            HelperDAO.ExecutaSQL(sql, CriaParametros1(curriculo));
+        }
         private SqlParameter[] CriaParametros1(CurriculoViewModel curriculo)
         {
             SqlParameter[] parametros = new SqlParameter[11];
@@ -126,13 +133,38 @@ namespace Trabalho.DAO
             a.cpf = registro["cpf"].ToString();
             a.nome = registro["nome"].ToString();
             a.rua = registro["rua"].ToString();
-            a.cep = Convert.ToInt32(registro["cep"]);
+            a.cep = registro["cep"].ToString();
+            a.bairro = registro["bairro"].ToString();
+            a.numeroEnd = registro["numeroEnd"].ToString();
+            a.celular = registro["celular"].ToString();
+            a.cargoPretendido = registro["cargoPretendido"].ToString(); 
+            a.complementoEnd = registro["complementoEnd"].ToString(); 
+            a.email = registro["email"].ToString();
+            a.estado = registro["estado"].ToString(); 
+            a.formacao = registro["formacao"].ToString();
+            a.curso1 = registro["curso1"].ToString();
+            a.curso2 = registro["curso2"].ToString();
+            a.curso3 = registro["curso3"].ToString();
+            a.curso4 = registro["curso4"].ToString();
+            a.curso5 = registro["curso5"].ToString();
+            a.experiencia1 = registro["experiencia1"].ToString();
+            a.experiencia2 = registro["experiencia2"].ToString();
+            a.experiencia3 = registro["experiencia3"].ToString();
+            a.experiencia1Ate = registro["experiencia1Ate"].ToString();
+            a.experiencia2Ate = registro["experiencia2Ate"].ToString();
+            a.experiencia3Ate = registro["experiencia3Ate"].ToString();
+            a.experiencia1Desde = registro["experiencia1Desde"].ToString();
+            a.experiencia2Desde = registro["experiencia2Desde"].ToString();
+            a.experiencia3Desde = registro["experiencia3Desde"].ToString();
+            a.idioma1 = registro["idioma1"].ToString();
+            a.idioma2 = registro["idioma2"].ToString();
+            a.idioma3 = registro["idioma3"].ToString();
             return a;
         }
 
         public CurriculoViewModel Consulta(string cpf)
         {
-            string sql = "select cpf, nome, rua, cep from CadastroCurriculo where cpf = " + cpf;
+            string sql = "select * from CadastroCurriculo where cpf = " + cpf;
             DataTable tabela = HelperDAO.ExecutaSelect(sql, null);
             if (tabela.Rows.Count == 0)
                 return null;

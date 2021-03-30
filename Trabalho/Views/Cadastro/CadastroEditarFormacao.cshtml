@@ -1,7 +1,5 @@
 ﻿@model CurriculoViewModel
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+
 <!DOCTYPE html>
 <html>
 
@@ -35,8 +33,8 @@
 
         </div>
         <div id="sub-background">
-            <div id="FormFormacao" accept-charset="UTF-8" action="action_page.php" autocomplete="off" target="_blank">
-                <form asp-action="Salvar2" method="post">
+            <div id="divPessoal" accept-charset="UTF-8" action="action_page.php" autocomplete="off" target="_blank">
+                <form asp-action="Edita3" asp-route-id="@Model.cpf" method="post">
                     <div>
                         <label class="titleFormacao">CADASTRO DE FORMAÇÃO ACADEMICA E CURSOS</label>
                     </div>
@@ -45,7 +43,7 @@
                             <div class="semCursos">
                                 <h1 class="formacao">
                                     <label>Formação: </label>
-                                    <select asp-for="formacao" id="formacao">
+                                    <select id="formacao" value="@Model.formacao">
                                         <option value="Estudante">Estudante</option>
                                         <option value="EMCompleto">Ensino Médio Completo</option>
                                         <option value="EMIncompleto">Ensino Médio Incompleto</option>
@@ -63,23 +61,23 @@
 
                             <h1 class="formacao">
                                 <label>Curso 1:</label>
-                                <input asp-action="" type="text" name="curso1" id="cursos" asp-for="curso1" title="Digite um curso que você tenha feito (até 5)" required />
+                                <input asp-action="" type="text" name="curso1" id="cursos" value="@Model.curso1" title="Digite um curso que você tenha feito (até 5)" required />
                             </h1>
                             <h1 class="formacao">
                                 <label>Curso 2:</label>
-                                <input asp-action="" type="text" name="curso2" id="cursos" asp-for="curso2" title="Digite um curso que você tenha feito (até 5)" />
+                                <input asp-action="" type="text" name="curso2" id="cursos" value="@Model.curso2" title="Digite um curso que você tenha feito (até 5)" />
                             </h1>
                             <h1 class="formacao">
                                 <label>Curso 3:</label>
-                                <input asp-action="" type="text" name="curso3" id="cursos" asp-for="curso3" title="Digite um curso que você tenha feito (até 5)" />
+                                <input asp-action="" type="text" name="curso3" id="cursos" value="@Model.curso3" title="Digite um curso que você tenha feito (até 5)" />
                             </h1>
                             <h1 class="formacao">
                                 <label>Curso 4:</label>
-                                <input asp-action="" type="text" name="curso4" id="cursos" asp-for="curso4" title="Digite um curso que você tenha feito (até 5)" />
+                                <input asp-action="" type="text" name="curso4" id="cursos" value="@Model.curso4" title="Digite um curso que você tenha feito (até 5)" />
                             </h1>
                             <h1 class="formacao">
                                 <label>Curso 5:</label>
-                                <input asp-action="" type="text" name="curso5" id="cursos" asp-for="curso5" title="Digite um curso que você tenha feito (até 5)" />
+                                <input asp-action="" type="text" name="curso5" id="cursos" value="@Model.curso5" title="Digite um curso que você tenha feito (até 5)" />
                             </h1>
                         </div>
                         <!--=================================================================================================================================================================================================================-->
@@ -88,8 +86,8 @@
                             <div class="button">
                                 <input type="submit" value="Avançar" class="advanceButton" />
                                 <!--<button asp-area="" asp-controller="Cadastro" asp-action="CadastroExpProf" class="advanceButton">
-                                    Avançar
-                                </button>-->
+        Avançar
+    </button>-->
                             </div>
                         </div>
                     </div>
@@ -97,9 +95,9 @@
             </div>
         </div>
 
-        <div id="rodapéForm">
+    <div id="rodapéForm">
 
-        </div>
+    </div>
 </body>
 
 </html>

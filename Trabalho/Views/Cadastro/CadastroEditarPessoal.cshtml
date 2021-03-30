@@ -1,7 +1,7 @@
 ﻿@model CurriculoViewModel
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 <!DOCTYPE html>
 <html>
 
@@ -37,7 +37,7 @@
         <div id="sub-background">
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
             <div id="divPessoal" accept-charset="UTF-8" action="action_page.php" autocomplete="off" target="_blank">
-                <form asp-action="Salvar1" method="post">
+                <form asp-action="Edita2" asp-route-id="@Model.cpf" method="post">
                     <div>
                         <label class="titlePessoal">CADASTRO DE INFORMAÇÕES PESSOAIS</label>
                     </div>
@@ -51,7 +51,7 @@
                             <h1 class="pessoais">
                                 <label>CPF: </label>
                                 <input type="text" name="cpf" \ pattern="\d{11}" placeholder="123456789XX"
-                                       required\ title="Digite um CPF no formato: xxxxxxxxxxx" class="form-control" value="@Model.cpf">
+                                       required\ title="Digite um CPF no formato: xxxxxxxxxxx" class="form-control" value="@Model.cpf" readonly>
                                 <!--  <input id="botao" type="submit" value="Verificar">-->
                             </h1>
 

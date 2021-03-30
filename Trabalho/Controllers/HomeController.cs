@@ -32,9 +32,9 @@ namespace Trabalho.Controllers
 
         public IActionResult Index()
         {
-            CurriculoDAO dao = new CurriculoDAO();
-            List<CurriculoViewModel> lista = dao.Listagem();
-            return View(lista);
+            //CurriculoDAO dao = new CurriculoDAO();
+           // List<CurriculoViewModel> lista = dao.Listagem();
+            return View();
         }
 
         public IActionResult Privacy()
@@ -44,7 +44,9 @@ namespace Trabalho.Controllers
 
         public IActionResult ListaBD()
         {
-            return View();
+            CurriculoDAO dao = new CurriculoDAO();
+            List<CurriculoViewModel> lista = dao.Listagem();
+            return View(lista);
         }
 
         public IActionResult Edit(string id)

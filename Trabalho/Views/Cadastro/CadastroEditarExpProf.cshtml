@@ -34,7 +34,7 @@
         </div>
         <div id="sub-background">
             <div id="divPessoal" accept-charset="UTF-8" action="action_page.php" autocomplete="off" target="_blank">
-                <form asp-action="Salvar3" asp-route-id="@Model.cpf" method="post">
+                <form asp-action="Edita3" asp-route-id="@Model.cpf" method="post">
                     <div>
                         <label class="titleExp">CADASTRO DE EXPERIÊNCIA PROFISSIONAL</label>
                     </div>
@@ -43,12 +43,12 @@
 
                             <h1 class="expProf">
                                 <label>1ª Experiência:</label>
-                                <input asp-action="" type="text" name="experiencia1" id="experiencia1" title="Digite sua experiência profissional (até 3)" asp-for="experiencia1" />
+                                <input asp-action="" type="text" name="experiencia1" id="experiencia1" title="Digite sua experiência profissional (até 3)" value="@Model.experiencia1" />
                                 <br />
                                 <label>De:</label>
-                                <input asp-action="" type="date" name="experiencia1Desde" id="experiencia1Desde" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia1Desde" />
+                                <input asp-action="" type="date" name="experiencia1Desde" id="experiencia1Desde" title="Digite o período de sua experiência profissional (até 3)" disabled value="@Model.experiencia1Desde"/>
                                 <label>Até:</label>
-                                <input asp-action="" type="date" name="experiencia1Ate" id="experiencia1Ate" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia1Ate" />
+                                <input asp-action="" type="date" name="experiencia1Ate" id="experiencia1Ate" title="Digite o período de sua experiência profissional (até 3)" disabled value="@Model.experiencia1Ate"/>
                             </h1>
                             <script type="text/javascript">
                                 document.getElementById("experiencia1").focusout = function () {
@@ -65,12 +65,12 @@
                             </script>
                             <h1 class="expProf">
                                 <label>2ª Experiência:</label>
-                                <input asp-action="" type="text" name="experiencia2" id="experiencia2" title="Digite sua experiência profissional (até 3)" asp-for="experiencia2" />
+                                <input asp-action="" type="text" name="experiencia2" id="experiencia2" title="Digite sua experiência profissional (até 3)" value="@Model.experiencia2"/>
                                 <br />
                                 <label>De:</label>
-                                <input asp-action="" type="date" name="experiencia2Desde" id="experiencia2Desde" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia2Desde" />
+                                <input asp-action="" type="date" name="experiencia2Desde" id="experiencia2Desde" title="Digite o período de sua experiência profissional (até 3)" disabled value="@Model.experiencia2Desde"/>
                                 <label>Até: </label>
-                                <input asp-action="" type="date" name="experiencia2Ate" id="experiencia2Ate" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia2Ate" />
+                                <input asp-action="" type="date" name="experiencia2Ate" id="experiencia2Ate" title="Digite o período de sua experiência profissional (até 3)" disabled value="@Model.experiencia2Ate"/>
                             </h1>
                             <script type="text/javascript">
                                 document.getElementById("experiencia2").focusout = function () {
@@ -87,12 +87,12 @@
                             </script>
                             <h1 class="expProf">
                                 <label>3ª Experiência:</label>
-                                <input asp-action="" type="text" name="experiencia3" id="experiencia3" title="Digite sua experiência profissional (até 3)" asp-for="experiencia3" />
+                                <input asp-action="" type="text" name="experiencia3" id="experiencia3" title="Digite sua experiência profissional (até 3)" value="@Model.experiencia3"/>
                                 <br />
                                 <label>De:</label>
-                                <input asp-action="" type="date" name="experiencia3Desde" id="experiencia3Desde" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia3Desde" />
+                                <input asp-action="" type="date" name="experiencia3Desde" id= "experiencia3Desde" title="Digite o período de sua experiência profissional (até 3)" disabled value="@Model.experiencia3Desde"/>
                                 <label>Até: </label>
-                                <input asp-action="" type="date" name="experiencia3Ate" id="experiencia3Ate" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia3Ate" />
+                                <input asp-action="" type="date" name="experiencia3Ate" id="experiencia3Ate" title="Digite o período de sua experiência profissional (até 3)" disabled value="@Model.experiencia3Ate"/>
                             </h1>
                             <script type="text/javascript">
                                 document.getElementById("experiencia3").focusout = function () {
@@ -113,10 +113,9 @@
                         <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 30%;">
                             <img width="100%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
                             <div class="button">
-                                <input type="submit" value="Avançar" class="advanceButton" />
-                               <!-- <button asp-area="" asp-controller="Cadastro" asp-action="CadastroIdiomas" class="advanceButton">
+                                <button asp-area="" asp-controller="Cadastro" asp-action="CadastroIdiomas" class="advanceButton">
                                     Avançar
-                                </button>-->
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -44,7 +44,7 @@ namespace Trabalho.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult Edit(string id)
+        public IActionResult Edita(string id)
         {
             try
             {
@@ -60,6 +60,71 @@ namespace Trabalho.Controllers
                 return View("Error", new ErrorViewModel(erro.ToString()));
             }
         }
+        public IActionResult Edita1(string id)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel curriculo = dao.Consulta(id);
+                if (curriculo == null)
+                    return RedirectToAction("index");
+                else
+                    return View("CadastroEditarPessoal", curriculo);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+        public IActionResult Edita2(string id)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel curriculo = dao.Consulta(id);
+                if (curriculo == null)
+                    return RedirectToAction("index");
+                else
+                    return View("CadastroEditarFormacao", curriculo);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+        public IActionResult Edita3(string id)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel curriculo = dao.Consulta(id);
+                if (curriculo == null)
+                    return RedirectToAction("index");
+                else
+                    return View("CadastroEditarExpProf", curriculo);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
+
+        public IActionResult Edita4(string id)
+        {
+            try
+            {
+                CurriculoDAO dao = new CurriculoDAO();
+                CurriculoViewModel curriculo = dao.Consulta(id);
+                if (curriculo == null)
+                    return RedirectToAction("index");
+                else
+                    return View("CadastroEditarIdiomas", curriculo);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", new ErrorViewModel(erro.ToString()));
+            }
+        }
 
         public IActionResult Salvar1(CurriculoViewModel curriculo)
         {
@@ -68,8 +133,8 @@ namespace Trabalho.Controllers
                 CurriculoDAO dao = new CurriculoDAO();
                 if (dao.Consulta(curriculo.cpf) == null)
                     dao.Inserir1(curriculo);
-                /*else
-                    dao.Alterar1(curriculo);*/
+                else
+                    dao.Alterar1(curriculo);
                 return RedirectToAction("CadastroFormacao");
             }
             catch (Exception erro)
@@ -84,8 +149,8 @@ namespace Trabalho.Controllers
                 CurriculoDAO dao = new CurriculoDAO();
                 if (dao.Consulta(curriculo.cpf) == null)
                     dao.Inserir4(curriculo);
-                /*else
-                    dao.Alterar1(curriculo);*/
+                else
+                    dao.Alterar1(curriculo);
                 return RedirectToAction("index");
             }
             catch (Exception erro)
@@ -100,8 +165,8 @@ namespace Trabalho.Controllers
                 CurriculoDAO dao = new CurriculoDAO();
                 if (dao.Consulta(curriculo.cpf) == null)
                     dao.Inserir3(curriculo);
-                /*else
-                    dao.Alterar1(curriculo);*/
+                else
+                    dao.Alterar1(curriculo);
                 return RedirectToAction("index");
             }
             catch (Exception erro)
@@ -109,15 +174,18 @@ namespace Trabalho.Controllers
                 return View("Error", new ErrorViewModel(erro.ToString()));
             }
         }
-        public IActionResult Salvar2(CurriculoViewModel curriculo)
+        public IActionResult Salvar2(CurriculoViewModel curriculo, int id)
         {
             try
             {
+                if (curriculo.cpf == null)
+                    curriculo.cpf = id.ToString();
+                
                 CurriculoDAO dao = new CurriculoDAO();
                 if (dao.Consulta(curriculo.cpf) == null)
                     dao.Inserir2(curriculo);
-                /*else
-                    dao.Alterar1(curriculo);*/
+                else
+                    dao.Alterar1(curriculo);
                 return RedirectToAction("index");
             }
             catch (Exception erro)
@@ -131,6 +199,8 @@ namespace Trabalho.Controllers
             CurriculoViewModel curriculo = new CurriculoViewModel();
             return View("CadastroPessoal", curriculo);
         }
+
+       
 
         /*  private void ValidaDados(CurriculoViewModel curriculo, string operacao)
           {

@@ -1,6 +1,7 @@
 ﻿header {
     position: relative;
-    margin: 6px -19%;
+    margin: 1% -19%;
+
 }
 
 #nav-menu {
@@ -178,7 +179,7 @@ h1.pessoais label {
     background: -webkit-linear-gradient(left, #21CE6D 0%, #1934A4 49%, #8AC53F 100%);
     background: linear-gradient(to right, #21CE6D 0%, #1934A4 49%, #8AC53F 100%);
     position: absolute;
-    height: 780px;
+    height: 800px;
     width: 1450px;
     margin: 0px -11%;
 }
@@ -325,16 +326,21 @@ h1.expProf {
     cursor: pointer;
     color: #ffffff;
     font-family: Arial;
-    font-size: 20px;
+    font-size: 25;
     font-weight: bold;
     font-style: italic;
-    padding: 10px 70px;
+    padding: 60px 70px;
+    padding-top: 10px;
     text-decoration: none;
     text-shadow: -1px -2px 0px #1570cd;
-    text-align: center;
+    text-align: justify;
     margin: -100px 0%;
+    height: 10px;
 }
 
+#listagem{
+    margin: 1% 0px;
+}
 
     .advanceButton3:hover {
         background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
@@ -465,7 +471,17 @@ h1.expProf {
     border: 8px groove #ccc;
     position: absolute;
     bottom: 0;
-    margin: 30px -11%;
+    margin: 0% -11%;
+}
+
+#rodapéForm {
+    background-color: #7589df;
+    height: 84px;
+    width: 1450px;
+    border: 8px groove #ccc;
+    position: center;
+    bottom: 0;
+    margin: 7% 0%;
 }
 
 .menu-right {
