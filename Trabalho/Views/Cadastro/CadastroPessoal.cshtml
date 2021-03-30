@@ -45,19 +45,19 @@
                         <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 30%">
                             <h1 class="pessoais">
                                 <label class="control-label">Nome: </label>
-                                <input name="nome" type="text" value="@Model.nome" class="form-control" required />
+                                <input name="nome" type="text" value="@Model.nome" class="form-control" required id="nome" />
                             </h1>
 
                             <h1 class="pessoais">
                                 <label>CPF: </label>
-                                <input type="text" name="cpf" \ pattern="\d{11}" placeholder="123456789XX"
+                                <input type="text" name="cpf" \ pattern="\d{11}" placeholder="123456789XX" id="cpf" onkeydown="mask.init(this, mask.num)" maxlength="11"
                                        required\ title="Digite um CPF no formato: xxxxxxxxxxx" class="form-control" value="@Model.cpf">
                                 <!--  <input id="botao" type="submit" value="Verificar">-->
                             </h1>
 
                             <h1 class="pessoais">
                                 <label>Celular: </label>
-                                <input type="text" name="celular" \ pattern= "\[0-9]{2}\[\s][0-9]{4}-[0-9]{4}"
+                                <input type="text" name="celular" \ pattern= "\[0-9]{2}\[\s][0-9]{4}-[0-9]{4}" id="celular"
                                        placeholder="11 999999999" title="Digite um celular no formato: 11 999999999" maxlength="12"
                                        required class="form-control" value="@Model.celular">
                                 <!-- <input id="botao" type="submit" value="Verificar">-->
@@ -65,13 +65,13 @@
 
                             <h1 class="pessoais">
                                 <label>Email: </label>
-                                <input type="email" value="@Model.email" placeholder="name@email.com" required name="email" class="form-control" />
+                                <input type="email" value="@Model.email" placeholder="name@email.com" required name="email" class="form-control" id="email" />
                                 <!-- <input id="botao" type="submit" value="Verificar" />-->
                             </h1>
 
                             <h1 class="pessoais" id="cargo">
                                 <label>Cargo Pretendido: </label>
-                                <input name="cargoPretendido" type="text" class="form-control" required placeholder="Engenheiro Civil" value="@Model.cargoPretendido" />
+                                <input name="cargoPretendido" type="text" class="form-control" required placeholder="Engenheiro Civil" value="@Model.cargoPretendido" id="cargoPretendido"/>
                             </h1>
 
                         </div>
@@ -94,7 +94,7 @@
 
                             <h1 class="pessoais">
                                 <label>Número </label>
-                                <input id="numeroEnd" type="number" value="@Model.numeroEnd" required class="form-control" name="numeroEnd" />
+                                <input id="numeroEnd" type="number" value="@Model.numeroEnd" required class="form-control" name="numeroEnd"  />
                                 <!-- <input id="botao" type="submit" value="Verificar" />-->
                             </h1>
 
