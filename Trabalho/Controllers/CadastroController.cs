@@ -200,34 +200,71 @@ namespace Trabalho.Controllers
             return View("CadastroPessoal", curriculo);
         }
 
-       
+        private void ValidaDados(CurriculoViewModel curriculo, string operacao)
+        {
+            //Validação das informações pessoais
+            if (!ValidaCPF(curriculo.cpf))
+                ModelState.AddModelError("Cpf", "CPF invalido");
+            if (string.IsNullOrEmpty(curriculo.nome))
+                ModelState.AddModelError("Nome", "Nome invalido");
+            if (curriculo.celular.Length < 0 && curriculo.celular.Length != 12)
+                ModelState.AddModelError("Celular", "Número de celular invalido");
+            if (string.IsNullOrEmpty(curriculo.email))
+                ModelState.AddModelError("Email", "Email invalido");
+            if (string.IsNullOrEmpty(curriculo.cargoPretendido))
+                ModelState.AddModelError("Cargo Prentendido", "Cargo pretendido invalido");
 
-        /*  private void ValidaDados(CurriculoViewModel curriculo, string operacao)
-          {
-              CurriculoDAO dao = new CurriculoDAO();
-              if (operacao == "I" && dao.Consulta(curriculo.Id) != null)
-                  ModelState.AddModelError("Id", "Código já está em uso.");
-              if (operacao == "A" && dao.Consulta(curriculo.Id) == null)
-                  ModelState.AddModelError("Id", "Aluno não existe.");
-              if (curriculo.Id <= 0)
-                  ModelState.AddModelError("Id", "Id inválido!");
+            //Validação das informações de endereço
+            if (string.IsNullOrEmpty(curriculo.cep))
+                ModelState.AddModelError("CEP", "CEP invalido");
+            if ((string.IsNullOrEmpty(curriculo.rua)))
+                ModelState.AddModelError("Rua", "Rua invalida");
+            if ((string.IsNullOrEmpty(curriculo.numeroEnd)))
+                ModelState.AddModelError("Numero", "Numero invalido");
+            if ((string.IsNullOrEmpty(curriculo.bairro)))
+                ModelState.AddModelError("Bairro", "Bairro invalido");
+            if ((string.IsNullOrEmpty(curriculo.complementoEnd)))
+                ModelState.AddModelError("Complemento de Endereço", "Complemento de Endereço invalido");
 
-              if (string.IsNullOrEmpty(curriculo.Nome))
-                  ModelState.AddModelError("Nome", "Preencha o nome.");
-              if (curriculo.Mensalidade < 0)
-                  ModelState.AddModelError("Mensalidade", "Campo obrigatório.");
-              if (curriculo.CidadeId <= 0)
-                  ModelState.AddModelError("CidadeId", "Informe o código da cidade.");
-              if (curriculo.DataNascimento > DateTime.Now)
-                  ModelState.AddModelError("DataNascimento", "Data inválida!");
-          }
 
-          private void ValidaDados(CurriculoViewModel curriculo, string operacao)
-          {
-              CurriculoDAO dao = new CurriculoDAO();
-              if (ModelState.IsValid )
-                  ModelState.AddModelError("Id", "Código já está em uso.");
-          }*/
+        }
+
+
+        public static bool ValidaCPF(string cpf)
+        {
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            string tempCpf;
+            string digito;
+            int soma;
+            int resto;
+            if (cpf.Length != 11)
+                return false;
+            tempCpf = cpf.Substring(0, 9);
+            soma = 0;
+
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = resto.ToString();
+            tempCpf = tempCpf + digito;
+            soma = 0;
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = digito + resto.ToString();
+            return cpf.EndsWith(digito);
+        }
+
+
 
     }
 }
