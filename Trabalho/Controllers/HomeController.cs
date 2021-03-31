@@ -48,6 +48,12 @@ namespace Trabalho.Controllers
             List<CurriculoViewModel> lista = dao.Listagem();
             return View(lista);
         }
+        public IActionResult ExibirCurriculo(string id)
+        {
+            CurriculoDAO dao = new CurriculoDAO();
+            CurriculoViewModel Select = dao.Consulta(id);
+            return View("ExibirCurriculo", Select);
+        }
 
         public IActionResult Edit(string id)
         {

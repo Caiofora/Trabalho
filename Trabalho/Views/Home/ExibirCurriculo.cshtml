@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model CurriculoViewModel
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Prototipo</title>
+    <link rel="stylesheet" type="text/css" href="~/css/prototipo.css" media="screen" />
+</head>
+
+<body>
+    <header>
+        <nav id="nav-menu">
+            <div id="site-name">
+                CURRICULUM
+                <span>
+                    <div class="menu-right">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu">Menu Inicial</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href=" # ">Ajuda</a>
+                    </div>
+                </span>
+            </div>
+        </nav>
+    </header>
+    <div onload="ConfereNulo()">
+        <div>
+            <h1>@Model.nome</h1>
+            <br /><br />
+            <h4>Endereço- @Model.rua, @Model.numeroEnd</h4>
+            <h4>Bairro: @Model.bairro, @Model.estado, Cep @Model.cep</h4>
+            <h4>Telefone: @Model.celular,  Email: @Model.email</h4>
+            ---------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div id="divCur">
+            <h2>01-Cursos para aperfeiçoamento de carreira </h2>
+            <h4>@Model.curso1</h4>
+            <h4>@Model.curso2</h4>
+            <h4>@Model.curso3</h4>
+            <h4>@Model.curso4</h4>
+            <h4>@Model.curso5</h4>
+            ---------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div id="divExp">
+            <h2>02-Experiências profissionais</h2>
+            <h3><b>@Model.experiencia1.ToUpper()</b></h3>
+            <h4>@Model.experiencia1Desde até @Model.experiencia1Ate </h4>
+            <h4>@Model.experiencia2 @Model.experiencia2Desde  @Model.experiencia2Ate </h4>
+            <h4>@Model.experiencia3 @Model.experiencia3Desde  @Model.experiencia3Ate </h4>
+            ---------------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div id="divIdioma">
+            <h2>03-Idiomas</h2>
+            <h4>@Model.idioma1</h4>
+            <h4>@Model.idioma2</h4>
+            <h4>@Model.idioma3</h4>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

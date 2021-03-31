@@ -10,8 +10,8 @@ namespace Trabalho.DAO
     {
         public static SqlConnection GetConexao()
         {
-            //string strCon = "Data Source=LOCALHOST\\SQLEXPRESS;Initial Catalog=AULADB;integrated security=true";
-            string strCon = "Data Source = LocalHost; Database = TRABDB; integrated security = true";
+            string strCon = "Data Source=LOCALHOST\\SQLEXPRESS;Initial Catalog=TRABDB;integrated security=true";
+            //string strCon = "Data Source = LocalHost; Database = TRABDB; integrated security = true";
             SqlConnection conexao = new SqlConnection(strCon);
             conexao.Open();
             return conexao;
