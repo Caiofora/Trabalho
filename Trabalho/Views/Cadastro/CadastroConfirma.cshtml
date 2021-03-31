@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<CurriculoViewModel>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Prototipo</title>
+    <link rel="stylesheet" type="text/css" href="~/css/prototipo.css" media="screen" />
+</head>
+
+<body>
+    <header>
+        <nav id="nav-menu">
+            <div id="site-name">
+                CURRICULUM
+                <span>
+                    <div class="menu-right">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu"> Menu Inicial</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a asp-area="" asp-controller="Home" asp-action="ListaBD" id="sub-menu">Lista de Currículos</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href=" # ">Ajuda</a>
+                    </div>
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <div id="background" class="col-12">
+        <div id="under-header">
+            <div class="button">
+                <img src="~/img/joia2.jpg" alt="Parabéns" class="imgConfirma">
+                <p id="sucessoMensagem"> Parabéns, suas mudanças foram salvas!</p>
+
+                <button asp-area="" asp-controller="Home" asp-action="Index"  id="btnAvancar2" >Avançar</button> 
+               
+               
+            </div>
+            </div>
+        </div>
+
+        <div id="rodapé"></div>
+    </body>
+
+    </html>

@@ -35,8 +35,8 @@
 
         </div>
         <div id="sub-background">
-            <div id="divPessoal" accept-charset="UTF-8" action="action_page.php" autocomplete="off" target="_blank">
-                <form asp-action="Salvar4" method="post">
+            <div id="FormIdioma" accept-charset="UTF-8" action="action_page.php" autocomplete="off" target="_blank">
+                <form asp-action="Salvar4" asp-route-id="@Model.cpf" method="post">
                     <div>
                         <label class="titleIdioma">CADASTRO DE IDIOMA</label>
                     </div>
@@ -233,9 +233,12 @@
                         <div style="float: left; margin: -100px 400px; text-align: justify; width: 30%;">
                             <img width="130%" class="ilustrativa3" src="~/img/curriculoex3.jpg">
                             <div class="button">
-                                <button asp-area="" asp-controller="Home" asp-action="Index" class="advanceButton3">
-                                    Avançar
-                                </button>
+
+                                <input type="submit" value="Avançar" class="advanceButton" href="~/Cadastro/Salvar4?id=@Model.cpf" />
+
+                                <!--<button asp-area="" asp-controller="Home" asp-action="Index" class="advanceButton3" href="~/Cadastro/Salvar4?id=@Model.cpf">
+        Avançar
+    </button>-->
                             </div>
                         </div>
                     </div>
@@ -243,7 +246,7 @@
             </div>
         </div>
 
-    <div id="rodapé">
+    <div id="rodapéForm">
 
     </div>
 </body>

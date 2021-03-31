@@ -35,11 +35,12 @@ namespace Trabalho.DAO
             string sql =
             "update CadastroCurriculo set experiencia1 = @experiencia1, " +
             "experiencia1Desde = @experiencia1Desde, " +
+            "experiencia1Ate = @experiencia1Ate, " +
             "experiencia2 = @experiencia2," +
-            "experiencia2Desde = @experiencia2Desde " +
-            "experiencia2Ate = @experiencia2Ate" +
-            "experiencia3 = @experiencia3" +
-            "experiencia3Desde = @experiencia3Desde" +
+            "experiencia2Desde = @experiencia2Desde, " +
+            "experiencia2Ate = @experiencia2Ate," +
+            "experiencia3 = @experiencia3," +
+            "experiencia3Desde = @experiencia3Desde," +
             "experiencia3Ate = @experiencia3Ate " +
             "where cpf = @cpf";
 

@@ -36,7 +36,7 @@
         </div>
         <div id="sub-background">
             <div id="FormFormacao" accept-charset="UTF-8" action="action_page.php" autocomplete="off" target="_blank">
-                <form asp-action="Salvar2" method="post">
+                <form asp-action="Salvar2" asp-route-id="@Model.cpf" method="post">
                     <div>
                         <label class="titleFormacao">CADASTRO DE FORMAÇÃO ACADEMICA E CURSOS</label>
                     </div>
@@ -44,14 +44,14 @@
                         <div style="float: left; margin: 0px 15px 0px 15px; text-align: justify; width: 60%">
                             <div class="semCursos">
                                 <h1 class="formacao">
-                                    <label>Formação: </label>
-                                    <select asp-for="formacao" id="formacao">
+                                    <label for="formacao">Formação: </label>
+                                    <select asp-for="formacao" name="formacao" id="formacao">
                                         <option value="Estudante">Estudante</option>
                                         <option value="EMCompleto">Ensino Médio Completo</option>
                                         <option value="EMIncompleto">Ensino Médio Incompleto</option>
                                         <option value="CursandoSuperior">Cursando Ens. Superior</option>
                                         <option value="Sup.Completo">Ens. Superior Completo</option>
-                                        <option value="PosComp">Pós Graduado</option>
+                                        <option value="PosGrad">Pós Graduado</option>
                                         <option value="PosIncomp.">Pós Graduação Incompleto</option>
                                     </select>
                                 </h1>
@@ -86,7 +86,7 @@
                         <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 30%;">
                             <img width="100%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
                             <div class="button">
-                                <input type="submit" value="Avançar" class="advanceButton" />
+                                <input type="submit" value="Avançar" class="advanceButton" href="~/Cadastro/Salvar1?id=@Model.cpf"/>
                                 <!--<button asp-area="" asp-controller="Cadastro" asp-action="CadastroExpProf" class="advanceButton">
                                     Avançar
                                 </button>-->

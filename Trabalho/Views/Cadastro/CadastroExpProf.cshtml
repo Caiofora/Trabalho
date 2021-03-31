@@ -42,7 +42,7 @@
                         <div style="float: left; margin: 0px 15px 0px 15px; text-align: justify; width: 60%">
 
                             <h1 class="expProf">
-                                <label>1ª Experiência:</label>
+                                <label>1ª Empresa:</label>
                                 <input asp-action="" type="text" name="experiencia1" id="experiencia1" title="Digite sua experiência profissional (até 3)" asp-for="experiencia1" />
                                 <br />
                                 <label>De:</label>
@@ -64,7 +64,7 @@
                                 }
                             </script>
                             <h1 class="expProf">
-                                <label>2ª Experiência:</label>
+                                <label>2ª Empresa:</label>
                                 <input asp-action="" type="text" name="experiencia2" id="experiencia2" title="Digite sua experiência profissional (até 3)" asp-for="experiencia2" />
                                 <br />
                                 <label>De:</label>
@@ -86,7 +86,7 @@
                                 }
                             </script>
                             <h1 class="expProf">
-                                <label>3ª Experiência:</label>
+                                <label>3ª Empresa:</label>
                                 <input asp-action="" type="text" name="experiencia3" id="experiencia3" title="Digite sua experiência profissional (até 3)" asp-for="experiencia3" />
                                 <br />
                                 <label>De:</label>
@@ -113,7 +113,7 @@
                         <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 30%;">
                             <img width="100%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
                             <div class="button">
-                                <input type="submit" value="Avançar" class="advanceButton" />
+                                <input type="submit" value="Avançar" class="advanceButton" href="~/Cadastro/Salvar3?id=@Model.cpf"/>
                                <!-- <button asp-area="" asp-controller="Cadastro" asp-action="CadastroIdiomas" class="advanceButton">
                                     Avançar
                                 </button>-->
