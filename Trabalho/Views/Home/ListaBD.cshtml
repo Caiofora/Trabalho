@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <title>Prototipo</title>
     <link rel="stylesheet" type="text/css" href="~/css/prototipo.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/css/sweetalert.css" media="screen" />
 </head>
 
 <body>
@@ -48,7 +49,7 @@
                 <tbody>
                 <td style="width:30px"><a href="~/Cadastro/Edita1?id=@a.cpf">Alterar</a> </td>
                 <td style="width:20px"><a href="~/Home/ExibirCurriculo?id=@a.cpf">Ver</a></td>
-                <td style="width:20px"><a href="~/Home/ExcluirCurriculo?id=@a.cpf">Excluir</a></td>
+                <td style="width:20px"><a href= "javascript:apagarCurriculo(@a.cpf)">Excluir</a></td>
                 <td>@a.cpf</td>
                 <td>@a.nome</td>
                 <td>@a.rua</td>
