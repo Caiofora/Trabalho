@@ -14,7 +14,7 @@
 
 <body>
     
-    <div >
+    <div>
         <div>
             <h1>@Model.nome</h1>
             <br /><br />
@@ -32,14 +32,38 @@
             <h4>@Model.curso5</h4>
             ---------------------------------------------------------------------------------------------------------------------------
         </div>
+        
+        
         <div id="divExp">
             <h2>02-Experiências profissionais:</h2>
-            <h3><b>@Model.experiencia1.ToUpper()</b></h3>
-            <h4>@Model.experiencia1Desde até @Model.experiencia1Ate </h4>
-            <h4>@Model.experiencia2 @Model.experiencia2Desde  @Model.experiencia2Ate </h4>
-            <h4>@Model.experiencia3 @Model.experiencia3Desde  @Model.experiencia3Ate </h4>
+
+            @if (!String.IsNullOrEmpty(Model.experiencia1))
+            {
+
+                <div>
+                    <h3><b>@Model.experiencia1.ToUpper()</b></h3>
+                    <h4>@Model.experiencia1Desde até @Model.experiencia1Ate </h4>
+                </div>
+
+            }
+            @if (!String.IsNullOrEmpty(Model.experiencia2))
+            {
+                <div>
+                    <h3><b>@Model.experiencia2.ToUpper()</b></h3>
+                    <h4> @Model.experiencia2Desde até  @Model.experiencia2Ate </h4>
+                </div>
+            }
+            @if (!String.IsNullOrEmpty(Model.experiencia3))
+            {
+                <div>
+                    <h3><b>@Model.experiencia3.ToUpper()</b></h3>
+                    <h4> @Model.experiencia3Desde até  @Model.experiencia3Ate </h4>
+                </div>
+            }
             ---------------------------------------------------------------------------------------------------------------------------
         </div>
+        
+
         <div id="divIdioma">
             <h2>03-Idiomas:</h2>
             <h4>@Model.idioma1</h4>
