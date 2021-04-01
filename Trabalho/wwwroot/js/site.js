@@ -20,7 +20,8 @@
         return v;
     },
 
+}
 
+function ListaCursos(CurriculoViewModel Select) {
 
-    
 }

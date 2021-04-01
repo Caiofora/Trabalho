@@ -52,6 +52,10 @@ namespace Trabalho.Controllers
         {
             CurriculoDAO dao = new CurriculoDAO();
             CurriculoViewModel Select = dao.Consulta(id);
+            if (Select.curso1 == null)
+            {
+
+            }
             return View("ExibirCurriculo", Select);
         }
 
