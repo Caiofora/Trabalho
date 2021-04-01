@@ -34,25 +34,27 @@
         <table id="listagem" class="table  table-striped table-info">
             <thead>
                 <tr>
-                    <th class="link">Ação</th>
-                    <th>Veja</th>
+                    <th style="width:25px"></th>
+                    <th style="width:20px">Ações</th>
+                    <th style="width:20px"></th>
                     <th>CPF</th>
                     <th>Nome</th>
                     <th>Rua</th>
                     <th>CEP</th>
                 </tr>
             </thead>
-             @foreach (CurriculoViewModel a in Model)
-              {
+            @foreach (CurriculoViewModel a in Model)
+            {
                 <tbody>
-                <td><a href="~/Cadastro/Edita1?id=@a.cpf">Alterar</a> </td>
-                <td><a href="~/Home/ExibirCurriculo?id=@a.cpf">Ver</a></td>
+                <td style="width:30px"><a href="~/Cadastro/Edita1?id=@a.cpf">Alterar</a> </td>
+                <td style="width:20px"><a href="~/Home/ExibirCurriculo?id=@a.cpf">Ver</a></td>
+                <td style="width:20px"><a href="~/Home/ExcluirCurriculo?id=@a.cpf">Excluir</a></td>
                 <td>@a.cpf</td>
                 <td>@a.nome</td>
                 <td>@a.rua</td>
                 <td>@a.cep</td>
                 </tbody>
-              }            
+            }
         </table>
     </div>
 
