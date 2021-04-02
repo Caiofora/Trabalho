@@ -22,8 +22,6 @@
                         <a asp-area="" asp-controller="Home" asp-action="Index" id="sub-menu">Menu Inicial</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href=" # ">Ajuda</a>
                     </div>
                 </span>
             </div>
@@ -42,7 +40,7 @@
                         <label class="titlePessoal">CADASTRO DE INFORMAÇÕES PESSOAIS</label>
                     </div>
                     <div style="margin: 0 auto; text-align: center; width: 100%">
-                        <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 30%">
+                        <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 30%" id="divDivisional">
                             <h1 class="pessoais">
                                 <label class="control-label">Nome: </label>
                                 <input name="nome" type="text" value="@Model.nome" class="form-control" required id="nome" />
@@ -76,7 +74,7 @@
 
                         </div>
                         <!--=================================================================================================================================================================================================================-->
-                        <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 40%;">
+                        <div style="float: left; margin: 50px 15px 0px 15px; text-align: justify; width: 40%;" id="divDivisional">
                             <h1 class="pessoais">
                                 <label>CEP: </label>
                                 <input id="cep" type="text" value="@Model.cep" \ title="Digite um cep no formato: XXXXX-XXX" required
@@ -114,40 +112,6 @@
                                 <label for="uf">Estado</label>
                                 <select id="uf" class="form-control" name="estado" translate="@Model.estado">
                                     <option value="AC">Acre</option>
-
-
-
-
-                                    --
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     <option value="AL">Alagoas</option>
                                     <option value="AP">Amapá</option>
                                     <option value="AM">Amazonas</option>
@@ -208,7 +172,7 @@
                             });
                         </script>
                         <!--=================================================================================================================================================================================================================-->
-                        <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 20%;">
+                        <div style="float: left; margin: 0px 0px 0px 0px; text-align: justify; width: 20%;" id="divDivisional">
                             <img width="150%" class="ilustrativa1" src="~/img/curriculoex3.jpg">
                             <div class="button">
                                 <input type="submit" value="Avançar" class="advanceButton" href="~/Cadastro/Salvar1?id=@Model.cpf"/>
