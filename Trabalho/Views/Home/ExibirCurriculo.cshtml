@@ -13,36 +13,65 @@
 </head>
 
 <body>
-    
-    <div>
+
+    <div style="border-color:black">
         <div>
             <h1>@Model.nome</h1>
-            <br /><br />
-            <h4>Endereço- @Model.rua, @Model.numeroEnd</h4>
-            <h4>Bairro: @Model.bairro, @Model.estado, Cep @Model.cep</h4>
-            <h4>Telefone: @Model.celular,  Email: @Model.email</h4>
-            ---------------------------------------------------------------------------------------------------------------------------
+            <br />
+            <h4><b>Endereço:</b> @Model.rua, @Model.numeroEnd</h4>
+            <h4><b>Bairro:</b> @Model.bairro, @Model.estado, @Model.cep</h4>
+            <h4><b>Telefone: </b>@Model.celular,  Email: @Model.email</h4>
+            <h4><b>Cargo Preterido: </b> @Model.cargoPretendido</h4>
+            -----------------------------------------------------------------------------------------------------------------------------------------------------
         </div>
         <div id="divCur">
-            <h2>01-Cursos para aperfeiçoamento de carreira: </h2>
-            <h4>@Model.curso1</h4>
-            <h4>@Model.curso2</h4>
-            <h4>@Model.curso3</h4>
-            <h4>@Model.curso4</h4>
-            <h4>@Model.curso5</h4>
-            ---------------------------------------------------------------------------------------------------------------------------
+            <h2>01 - Cursos para Aperfeiçoamento de Carreira: </h2>
+            <br />
+            @if (!String.IsNullOrEmpty(Model.curso1))
+            {
+                <h4><b>Curso I -</b> @Model.curso1</h4>
+                <hr style="border-top: 1px solid black;">
+                <br />
+            }
+            @if (!String.IsNullOrEmpty(Model.curso2))
+            {
+                <h4><b>Curso II -</b> @Model.curso2</h4>
+                <hr style="border-top: 1px solid black;">
+                <br />
+            }
+            @if (!String.IsNullOrEmpty(Model.curso3))
+            {
+                <h4><b>Curso III -</b> @Model.curso3</h4>
+                <hr style="border-top: 1px solid black;">
+                <br />
+            }
+            @if (!String.IsNullOrEmpty(Model.curso4))
+            {
+                <h4><b>Curso IV -</b> @Model.curso4</h4>
+                <hr style="border-top: 1px solid black;">
+                <br />
+            }
+            @if (!String.IsNullOrEmpty(Model.curso5))
+            {
+                <h4><b>Curso V -</b> @Model.curso5</h4>
+                <hr style="border-top: 1px solid black;">
+                <br />
+            }
+            -----------------------------------------------------------------------------------------------------------------------------------------------------
         </div>
-        
-        
-        <div id="divExp">
-            <h2>02-Experiências profissionais:</h2>
 
+
+        <div id="divExp">
+            <h2>02 - Experiências Profissionais:</h2>
+            <br />
             @if (!String.IsNullOrEmpty(Model.experiencia1))
             {
 
                 <div>
                     <h3><b>@Model.experiencia1.ToUpper()</b></h3>
-                    <h4>@Model.experiencia1Desde até @Model.experiencia1Ate </h4>
+                    <hr style="border-top: 1px solid black;">
+                    <h4>&nbsp;&nbsp;&nbsp;&nbsp;<b>Data: </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.experiencia1Desde até @Model.experiencia1Ate </h4>
+                    <br />
                 </div>
 
             }
@@ -50,25 +79,39 @@
             {
                 <div>
                     <h3><b>@Model.experiencia2.ToUpper()</b></h3>
-                    <h4> @Model.experiencia2Desde até  @Model.experiencia2Ate </h4>
+                    <hr style="border-top: 1px solid black;">
+                    <h4> &nbsp;&nbsp;&nbsp;&nbsp;<b>Data: </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.experiencia2Desde até  @Model.experiencia2Ate </h4>
+                    <br />
                 </div>
             }
             @if (!String.IsNullOrEmpty(Model.experiencia3))
             {
                 <div>
                     <h3><b>@Model.experiencia3.ToUpper()</b></h3>
-                    <h4> @Model.experiencia3Desde até  @Model.experiencia3Ate </h4>
+                    <hr style="border-top: 1px solid black;">
+                    <h4> &nbsp;&nbsp;&nbsp;&nbsp;<b>Data: </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.experiencia3Desde até  @Model.experiencia3Ate </h4>
+                    <br />
                 </div>
             }
-            ---------------------------------------------------------------------------------------------------------------------------
+            -----------------------------------------------------------------------------------------------------------------------------------------------------
         </div>
-        
+
 
         <div id="divIdioma">
-            <h2>03-Idiomas:</h2>
-            <h4>@Model.idioma1</h4>
-            <h4>@Model.idioma2</h4>
-            <h4>@Model.idioma3</h4>
+            <h2>03 - Idiomas:</h2>
+            <br />
+            @if (!String.IsNullOrEmpty(Model.idioma1))
+            {
+                <h4><b>Idioma I -</b>  @Model.idioma1</h4>
+            }
+            @if (!String.IsNullOrEmpty(Model.idioma2))
+            {
+                <h4><b>Idioma II -</b>  @Model.idioma2</h4>
+            }
+            @if (!String.IsNullOrEmpty(Model.idioma3))
+            {
+                <h4><b>Idioma III -</b>  @Model.idioma3</h4>
+            }
         </div>
     </div>
 

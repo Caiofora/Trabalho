@@ -232,11 +232,12 @@
                             <img width="130%" class="ilustrativa3" src="~/img/curriculoex3.jpg">
                             <div class="button">
 
-                                <input type="submit" value="Avançar" class="advanceButton" href="~/Cadastro/Salvar4?id=@Model.cpf" />
+                                <input type="submit" value="Avançar" class="advanceButton" href="~/Cadastro/Salvar4?id=@Model.cpf" onclick="javascript: Salvar()" />
 
                                 <!--<button asp-area="" asp-controller="Home" asp-action="Index" class="advanceButton3" href="~/Cadastro/Salvar4?id=@Model.cpf">
         Avançar
     </button>-->
+                                <a href="javascript:apagarCurriculo()">Salvar</a>
                             </div>
                         </div>
                     </div>

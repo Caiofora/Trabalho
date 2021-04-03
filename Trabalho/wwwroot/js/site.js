@@ -67,15 +67,17 @@ function apagarCurriculo(id) {
         });
 };
 
-/*function aparecerSimbolo() {
+
+function Salvar() {
     swal({
         position: 'center',
-        icon: 'success',
-        title: 'Curriculo excluído!',
+        type: 'success',
+        title: 'Curriculo Salvo!',
         showConfirmButton: false,
-        timer: 1500
+        timer: 2500
     },
-    function () {
-        location.href = '/Home/ExcluirCurriculo?id=' + id;
-    });
-};*/
+        function () {
+            location.href = '/Home/Index';
+        });
+};
+

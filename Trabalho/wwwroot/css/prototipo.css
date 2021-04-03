@@ -19,6 +19,7 @@
     padding: 10px
 }
 
+
 #uniaoDivs {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(15,15,221,1) 47%, rgba(2,0,36,1) 98%);
@@ -54,9 +55,6 @@ img.imgLehr {
     width: 900px;
 }
 
-#sucessoMensagem {
-    text-align:center;
-}
 
 #btnAvancar2 {
     margin: 0% 45%;
@@ -155,9 +153,19 @@ img.imgCaio {
     font-size: 28px;
     color: rgb(16, 7, 94);
     text-decoration: underline;
-    text-align: center;
-    margin: 10px 20%;
-    width: 650px;
+    margin: 60% 33%;
+    width: 70%;
+    padding-left:initial;
+    background-color: white;
+}
+#sucessoMensagem span{
+    font-size: 28px;
+    color: rgb(16, 7, 94);
+    text-decoration: underline;
+    margin: 60% 0%;
+    width: 90%;
+    padding-left: initial;
+    background-color: white;
 }
 
 #FormExp select {
@@ -294,6 +302,13 @@ h1.expProf {
     width: 600px;
     margin: 115px 31%;
     font-size: 26px;
+    color: white;
+}
+
+.textoBemMaior {
+    width: 900px;
+    margin: 115px 26%;
+    font-size: 36px;
     color: white;
 }
 

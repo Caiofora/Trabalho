@@ -44,67 +44,30 @@
                                 <input asp-action="" type="text" name="experiencia1" id="experiencia1" title="Digite sua experiência profissional (até 3)" asp-for="experiencia1" />
                                 <br />
                                 <label>De:</label>
-                                <input asp-action="" type="date" name="experiencia1Desde" id="experiencia1Desde" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia1Desde" />
+                                <input asp-action="" type="date" name="experiencia1Desde" id="experiencia1Desde" title="Digite o período de sua experiência profissional (até 3)"  asp-for="experiencia1Desde" />
                                 <label>Até:</label>
-                                <input asp-action="" type="date" name="experiencia1Ate" id="experiencia1Ate" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia1Ate" />
+                                <input asp-action="" type="date" name="experiencia1Ate" id="experiencia1Ate" title="Digite o período de sua experiência profissional (até 3)"  asp-for="experiencia1Ate" />
                             </h1>
-                            <script type="text/javascript">
-                                document.getElementById("experiencia1").focusout = function () {
-                                    if (document.getElementById("experiencia1").value != null || document.getElementById("inputExp1").value != "") {
-                                        document.getElementById("experiencia1Desde").disabled = false;
-                                        document.getElementById("experiencia1Ate").disabled = false;
-
-                                    }
-                                    else {
-                                        document.getElementById("experiencia1Desde").disabled = true;
-                                        document.getElementById("experiencia1Ate").disabled = true;
-                                    }
-                                }
-                            </script>
+                 
                             <h1 class="expProf">
                                 <label>2ª Empresa:</label>
                                 <input asp-action="" type="text" name="experiencia2" id="experiencia2" title="Digite sua experiência profissional (até 3)" asp-for="experiencia2" />
                                 <br />
                                 <label>De:</label>
-                                <input asp-action="" type="date" name="experiencia2Desde" id="experiencia2Desde" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia2Desde" />
+                                <input asp-action="" type="date" name="experiencia2Desde" id="experiencia2Desde" title="Digite o período de sua experiência profissional (até 3)"  asp-for="experiencia2Desde" />
                                 <label>Até: </label>
-                                <input asp-action="" type="date" name="experiencia2Ate" id="experiencia2Ate" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia2Ate" />
+                                <input asp-action="" type="date" name="experiencia2Ate" id="experiencia2Ate" title="Digite o período de sua experiência profissional (até 3)"  asp-for="experiencia2Ate" />
                             </h1>
-                            <script type="text/javascript">
-                                document.getElementById("experiencia2").focusout = function () {
-                                    if (document.getElementById("experiencia2").value != null) {
-                                        document.getElementById("experiencia2Desde").disabled = false;
-                                        document.getElementById("experiencia2Ate").disabled = false;
 
-                                    }
-                                    else {
-                                        document.getElementById("experiencia2Desde").disabled = true;
-                                        document.getElementById("experiencia2Ate").disabled = true;
-                                    }
-                                }
-                            </script>
                             <h1 class="expProf">
                                 <label>3ª Empresa:</label>
                                 <input asp-action="" type="text" name="experiencia3" id="experiencia3" title="Digite sua experiência profissional (até 3)" asp-for="experiencia3" />
                                 <br />
                                 <label>De:</label>
-                                <input asp-action="" type="date" name="experiencia3Desde" id="experiencia3Desde" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia3Desde" />
+                                <input asp-action="" type="date" name="experiencia3Desde" id="experiencia3Desde" title="Digite o período de sua experiência profissional (até 3)" asp-for="experiencia3Desde" />
                                 <label>Até: </label>
-                                <input asp-action="" type="date" name="experiencia3Ate" id="experiencia3Ate" title="Digite o período de sua experiência profissional (até 3)" disabled asp-for="experiencia3Ate" />
+                                <input asp-action="" type="date" name="experiencia3Ate" id="experiencia3Ate" title="Digite o período de sua experiência profissional (até 3)" asp-for="experiencia3Ate" />
                             </h1>
-                            <script type="text/javascript">
-                                document.getElementById("experiencia3").focusout = function () {
-                                    if (document.getElementById("experiencia3").value != null) {
-                                        document.getElementById("experiencia3Desde").disabled = false;
-                                        document.getElementById("experiencia3Ate").disabled = false;
-
-                                    }
-                                    else {
-                                        document.getElementById("experiencia3Desde").disabled = true;
-                                        document.getElementById("experiencia3Ate").disabled = true;
-                                    }
-                                }
-                            </script>
 
                         </div>
                         <!--=================================================================================================================================================================================================================-->
