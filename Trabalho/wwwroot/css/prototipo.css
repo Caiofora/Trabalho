@@ -298,6 +298,11 @@ h1.expProf {
     margin: 10% 0px;
 }
 
+#idiomaSite select {
+    width: 190px;
+    background-color: #7589df
+}
+
 .textoMaior {
     width: 600px;
     margin: 115px 31%;
@@ -535,9 +540,16 @@ h1.expProf {
 
 .menu-right {
     text-align: right;
-    margin-top: -20px;
+    margin-top: -30px;
     padding-right: 20px;
 }
+
+    .menu-right select {
+        width: 190px;
+        margin: -10px 0px;
+        background-color: #7589df;
+        border: 2px solid #337fed;
+    }
 
 .advanceButtonFinal:hover {
     background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);

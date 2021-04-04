@@ -120,6 +120,10 @@ namespace Trabalho.Controllers
                 {
                     curriculo.cpf = id;
                 }
+
+               // ValidaDadosPessoal(curriculo.cpf);
+
+
                 if (curriculo.complementoEnd == null)
                 {
                     curriculo.complementoEnd = "";
@@ -303,67 +307,65 @@ namespace Trabalho.Controllers
             return View("CadastroPessoal", curriculo);
         }
 
-        private void ValidaDadosPessoal(CurriculoViewModel curriculo, string operacao)
-        {
-            //Validação das informações pessoais
-            if (!ValidaCPF(curriculo.cpf))
-                ModelState.AddModelError("Cpf", "CPF invalido");
-            if (string.IsNullOrEmpty(curriculo.nome))
-                ModelState.AddModelError("Nome", "Nome invalido");
-            if (curriculo.celular.Length < 0 && curriculo.celular.Length != 12)
-                ModelState.AddModelError("Celular", "Número de celular invalido");
-            if (string.IsNullOrEmpty(curriculo.email))
-                ModelState.AddModelError("Email", "Email invalido");
-            if (string.IsNullOrEmpty(curriculo.cargoPretendido))
-                ModelState.AddModelError("Cargo Prentendido", "Cargo pretendido invalido");
+        //private void ValidaDadosPessoal(CurriculoViewModel curriculo, string operacao)
+        //{
+        //    //Validação das informações pessoais
+        //    if (!ValidaCPF(curriculo.cpf))
+        //        ModelState.AddModelError("cpf", "CPF invalido");
+        //    if (string.IsNullOrEmpty(curriculo.nome))
+        //        ModelState.AddModelError("nome", "Nome invalido");
+        //    if (curriculo.celular.Length < 0 && curriculo.celular.Length != 12)
+        //        ModelState.AddModelError("celular", "Número de celular invalido");
+        //    if (string.IsNullOrEmpty(curriculo.email))
+        //        ModelState.AddModelError("email", "Email invalido");
+        //    if (string.IsNullOrEmpty(curriculo.cargoPretendido))
+        //        ModelState.AddModelError("cargo Prentendido", "Cargo pretendido invalido");
 
-            //Validação das informações de endereço
-            if (string.IsNullOrEmpty(curriculo.cep))
-                ModelState.AddModelError("CEP", "CEP invalido");
-            if ((string.IsNullOrEmpty(curriculo.rua)))
-                ModelState.AddModelError("Rua", "Rua invalida");
-            if ((string.IsNullOrEmpty(curriculo.numeroEnd)))
-                ModelState.AddModelError("Numero", "Numero invalido");
-            if ((string.IsNullOrEmpty(curriculo.bairro)))
-                ModelState.AddModelError("Bairro", "Bairro invalido");
-           // if ((string.IsNullOrEmpty(curriculo.complementoEnd)))
-              //  ModelState.AddModelError("Complemento de Endereço", "Complemento de Endereço invalido");
-        }
+        //    //Validação das informações de endereço
+        //    if (string.IsNullOrEmpty(curriculo.cep))
+        //        ModelState.AddModelError("CEP", "CEP invalido");
+        //    if ((string.IsNullOrEmpty(curriculo.rua)))
+        //        ModelState.AddModelError("Rua", "Rua invalida");
+        //    if ((string.IsNullOrEmpty(curriculo.numeroEnd)))
+        //        ModelState.AddModelError("Numero", "Numero invalido");
+        //    if ((string.IsNullOrEmpty(curriculo.bairro)))
+        //        ModelState.AddModelError("Bairro", "Bairro invalido");
+        //}
 
 
-        public static bool ValidaCPF(string cpf)
-        {
-            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            string tempCpf;
-            string digito;
-            int soma;
-            int resto;
-            if (cpf.Length != 11)
-                return false;
-            tempCpf = cpf.Substring(0, 9);
-            soma = 0;
+        //public static bool ValidaCPF(string cpf)
+        //{
+        //    int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+        //    int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+        //    string tempCpf;
+        //    string digito;
+        //    int soma;
+        //    int resto;
+        //    if (cpf.Length != 11)
+        //        return false;
+        //    tempCpf = cpf.Substring(0, 9);
+        //    soma = 0;
 
-            for (int i = 0; i < 9; i++)
-                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
-            resto = soma % 11;
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-            digito = resto.ToString();
-            tempCpf = tempCpf + digito;
-            soma = 0;
-            for (int i = 0; i < 10; i++)
-                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
-            resto = soma % 11;
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-            digito = digito + resto.ToString();
-            return cpf.EndsWith(digito);
-        }
+        //    for (int i = 0; i < 9; i++)
+        //        soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+        //    resto = soma % 11;
+        //    if (resto < 2)
+        //        resto = 0;
+        //    else
+        //        resto = 11 - resto;
+        //    digito = resto.ToString();
+        //    tempCpf = tempCpf + digito;
+        //    soma = 0;
+        //    for (int i = 0; i < 10; i++)
+        //        soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+        //    resto = soma % 11;
+        //    if (resto < 2)
+        //        resto = 0;
+        //    else
+        //        resto = 11 - resto;
+        //    digito = digito + resto.ToString();
+        //    return cpf.EndsWith(digito);
+        //}
     }
 }
 

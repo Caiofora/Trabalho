@@ -7,6 +7,7 @@ namespace Trabalho.Models
 {
     public class CurriculoViewModel
     {
+        public string language { get; set; }
         public string cpf { get; set; }
         public string nome { get; set; }
         public string celular { get; set; }
